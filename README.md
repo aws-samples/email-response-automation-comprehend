@@ -8,7 +8,7 @@ Many of a times, customer asks the basic questions and it is unnecessary that cu
 
 ## Process Flow / Architecture Diagram
 
-![Automated_Email_Response_using_Amazon_Comprehend](/uploads/7025157e26ddbb27a7a768d256b59169/Automated_Email_Response_using_Amazon_Comprehend.jpg)
+![Automated_Email_Response_using_Amazon_Comprehend](/uploads/464041959b84ee1c9b5ee56a18e2b164/Automated_Email_Response_using_Amazon_Comprehend.jpg)
 
 ## Pre-requisites
 - An AWS Account with region us-east-1
