@@ -32,7 +32,7 @@ class WorkMailOrgStack(core.Stack):
                                                       runtime=lambda_.Runtime.PYTHON_3_6,
                                                       function_name='workmail_org_creation',
                                                       code=lambda_.Code.asset(
-                                                          "workmailorg_project/Lambda"),
+                                                          "comprehend_custom_classification/Lambda"),
                                                       handler="workmailcreateorg.handler",
                                                       environment= {'work_org_name': orgname_param.value_as_string,
                                                                     'user_name': username_param.value_as_string,
@@ -63,7 +63,7 @@ class WorkMailOrgStack(core.Stack):
                                             self, "workmail-org is complete",
                                             function_name="resource-is-complete-lambda",
                                             code=lambda_.Code.asset(
-                                               "workmailorg_project/Lambda"),
+                                               "comprehend_custom_classification/Lambda"),
                                             handler="workmailcreateorg.is_complete",
                                             runtime=lambda_.Runtime.PYTHON_3_6,
                                             environment= {'work_org_name':orgname_param.value_as_string,

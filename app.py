@@ -9,10 +9,14 @@ from aws_cdk import core as cdk
 # being updated to use `cdk`.  You may delete this import if you don't need it.
 from aws_cdk import core
 
-from comprehend_train_deploy_notebook_stack.notebook_comprehend_train_deploy_project_stack import NotebookComprehendTrainDeployProjectStack
+
+from comprehend_custom_classification.notebook_comprehend_train_deploy_project_stack import NotebookComprehendTrainDeployProjectStack
+from comprehend_custom_classification.workmailorg_project_stack import WorkMailOrgStack
 #from EmailbotProjectStack.EmailbotProjectStack import EmailbotProjectStack
 
 app = core.App()
-NotebookComprehendTrainDeployProjectStack(app, "comprehend-custome-classifier-dev-notebook-stack")
+NotebookComprehendTrainDeployProjectStack(app, "comprehend-custom-classifier-dev-notebook-stack")
+WorkMailOrgStack(app, "workmail-organization-domain-user-dev-stack")
+
 
 app.synth()

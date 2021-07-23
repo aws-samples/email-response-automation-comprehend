@@ -6,7 +6,7 @@ with open("README.md") as fp:
 
 
 setuptools.setup(
-    name="workmailorg_project",
+    name="comprehend_custom_classification",
     version="0.0.1",
 
     description="An empty CDK Python app",
@@ -15,8 +15,8 @@ setuptools.setup(
 
     author="author",
 
-    package_dir={"": "workmailorg_project"},
-    packages=setuptools.find_packages(where="workmailorg_project"),
+    package_dir={"": "comprehend_custom_classification"},
+    packages=setuptools.find_packages(where="comprehend_custom_classification"),
 
     install_requires=[
         "aws-cdk.core==1.110.1",
