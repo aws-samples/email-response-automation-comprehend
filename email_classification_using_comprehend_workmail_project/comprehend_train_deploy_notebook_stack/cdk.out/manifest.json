@@ -1,0 +1,187 @@
+{
+  "version": "12.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "NotebookComprehendTrainDeployProjectStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "NotebookComprehendTrainDeployProjectStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/NotebookComprehendTrainDeployProjectStack/NotebookName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NotebookName",
+            "trace": [
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/NotebookComprehendTrainDeployProjectStack/NotebookConfigName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NotebookConfigName",
+            "trace": [
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/NotebookComprehendTrainDeployProjectStack/RoleName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoleName",
+            "trace": [
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/NotebookComprehendTrainDeployProjectStack/sagemaker-notebook-execution-role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sagemakernotebookexecutionrole7D619B46",
+            "trace": [
+              "new Role (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/NotebookComprehendTrainDeployProjectStack/sagemaker-notebook-execution-role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sagemakernotebookexecutionroleDefaultPolicy7C5EC0EC",
+            "trace": [
+              "new Policy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/aws-iam/lib/role.js:209:34)",
+              "Role.addToPolicy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/aws-iam/lib/role.js:221:21)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8582:24)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7970:107",
+              "Kernel._ensureSync (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8563:28)",
+              "Kernel.invoke (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/NotebookComprehendTrainDeployProjectStack/notebook life cycle config": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "notebooklifecycleconfig",
+            "trace": [
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/NotebookComprehendTrainDeployProjectStack/notebook instance for comprehend training": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "notebookinstanceforcomprehendtraining",
+            "trace": [
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/NotebookComprehendTrainDeployProjectStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9",
+              "visit (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
+              "visit (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
+              "injectMetadataResources (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
+              "Object.synthesize (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8582:24)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7970:107",
+              "Kernel._ensureSync (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8563:28)",
+              "Kernel.invoke (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/NotebookComprehendTrainDeployProjectStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9",
+              "visit (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
+              "visit (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
+              "injectMetadataResources (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
+              "Object.synthesize (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-g6YNiA/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8582:24)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7970:107",
+              "Kernel._ensureSync (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:8563:28)",
+              "Kernel.invoke (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmpwh233zqu/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "NotebookComprehendTrainDeployProjectStack"
+    }
+  }
+}

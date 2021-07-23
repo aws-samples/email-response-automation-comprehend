@@ -1,0 +1,251 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Construct",
+          "version": "1.114.0"
+        }
+      },
+      "NotebookComprehendTrainDeployProjectStack": {
+        "id": "NotebookComprehendTrainDeployProjectStack",
+        "path": "NotebookComprehendTrainDeployProjectStack",
+        "children": {
+          "NotebookName": {
+            "id": "NotebookName",
+            "path": "NotebookComprehendTrainDeployProjectStack/NotebookName",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnParameter",
+              "version": "1.114.0"
+            }
+          },
+          "NotebookConfigName": {
+            "id": "NotebookConfigName",
+            "path": "NotebookComprehendTrainDeployProjectStack/NotebookConfigName",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnParameter",
+              "version": "1.114.0"
+            }
+          },
+          "RoleName": {
+            "id": "RoleName",
+            "path": "NotebookComprehendTrainDeployProjectStack/RoleName",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnParameter",
+              "version": "1.114.0"
+            }
+          },
+          "sagemaker-notebook-execution-role": {
+            "id": "sagemaker-notebook-execution-role",
+            "path": "NotebookComprehendTrainDeployProjectStack/sagemaker-notebook-execution-role",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "NotebookComprehendTrainDeployProjectStack/sagemaker-notebook-execution-role/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": [
+                              "sagemaker.amazonaws.com",
+                              "comprehend.amazonaws.com"
+                            ]
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "description": "Sagemaker execution policy for comprehend classification",
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/AmazonSageMakerFullAccess"
+                          ]
+                        ]
+                      }
+                    ],
+                    "roleName": {
+                      "Ref": "RoleName"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.CfnRole",
+                  "version": "1.114.0"
+                }
+              },
+              "DefaultPolicy": {
+                "id": "DefaultPolicy",
+                "path": "NotebookComprehendTrainDeployProjectStack/sagemaker-notebook-execution-role/DefaultPolicy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NotebookComprehendTrainDeployProjectStack/sagemaker-notebook-execution-role/DefaultPolicy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                      "aws:cdk:cloudformation:props": {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": [
+                                "s3:GetObject",
+                                "s3:PutObject",
+                                "s3:DeleteObject",
+                                "s3:ListBucket",
+                                "comprehend:CreateDocumentClassifier",
+                                "comprehend:DescribeDocumentClassifier",
+                                "comprehend:CreateEndpoint",
+                                "comprehend:TagResource",
+                                "comprehend:ClassifyDocument",
+                                "comprehend:DescribeEndpoint"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": "*"
+                            },
+                            {
+                              "Action": [
+                                "iam:GetRole",
+                                "iam:PassRole"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": "*"
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "policyName": "sagemakernotebookexecutionroleDefaultPolicy7C5EC0EC",
+                        "roles": [
+                          {
+                            "Ref": "sagemakernotebookexecutionrole7D619B46"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.CfnPolicy",
+                      "version": "1.114.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.Policy",
+                  "version": "1.114.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-iam.Role",
+              "version": "1.114.0"
+            }
+          },
+          "notebook life cycle config": {
+            "id": "notebook life cycle config",
+            "path": "NotebookComprehendTrainDeployProjectStack/notebook life cycle config",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::SageMaker::NotebookInstanceLifecycleConfig",
+              "aws:cdk:cloudformation:props": {
+                "notebookInstanceLifecycleConfigName": {
+                  "Ref": "NotebookConfigName"
+                },
+                "onCreate": [
+                  {
+                    "content": {
+                      "Fn::Base64": "#!/bin/bash\nset -e\nnohup pip install --upgrade pip\n\n\ncd /home/ec2-user/SageMaker\n\naws s3 cp s3://ee-assets-prod-us-east-1/modules/3d6fff6ad26244eeb40b0ea0c9651940/v1/comprehend_class_notebook.ipynb ."
+                    }
+                  }
+                ],
+                "onStart": [
+                  {
+                    "content": {
+                      "Fn::Base64": "#!/bin/bash\nset -e\nnohup pip install --upgrade pip\n\n\ncd /home/ec2-user/SageMaker\n\naws s3 cp s3://ee-assets-prod-us-east-1/modules/3d6fff6ad26244eeb40b0ea0c9651940/v1/comprehend_class_notebook.ipynb ."
+                    }
+                  }
+                ]
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-sagemaker.CfnNotebookInstanceLifecycleConfig",
+              "version": "1.114.0"
+            }
+          },
+          "notebook instance for comprehend training": {
+            "id": "notebook instance for comprehend training",
+            "path": "NotebookComprehendTrainDeployProjectStack/notebook instance for comprehend training",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::SageMaker::NotebookInstance",
+              "aws:cdk:cloudformation:props": {
+                "instanceType": "ml.t2.xlarge",
+                "roleArn": {
+                  "Fn::GetAtt": [
+                    "sagemakernotebookexecutionrole7D619B46",
+                    "Arn"
+                  ]
+                },
+                "lifecycleConfigName": {
+                  "Ref": "NotebookConfigName"
+                },
+                "notebookInstanceName": {
+                  "Ref": "NotebookName"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-sagemaker.CfnNotebookInstance",
+              "version": "1.114.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "NotebookComprehendTrainDeployProjectStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "NotebookComprehendTrainDeployProjectStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.114.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "NotebookComprehendTrainDeployProjectStack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnCondition",
+                  "version": "1.114.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.114.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.114.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "@aws-cdk/core.App",
+      "version": "1.114.0"
+    }
+  }
+}
