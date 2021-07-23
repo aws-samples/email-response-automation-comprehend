@@ -6,7 +6,7 @@ with open("README.md") as fp:
 
 
 setuptools.setup(
-    name="notebook_comprehend_train_deploy_project",
+    name="workmailorg_project",
     version="0.0.1",
 
     description="An empty CDK Python app",
@@ -15,8 +15,8 @@ setuptools.setup(
 
     author="author",
 
-    package_dir={"": "notebook_comprehend_train_deploy_project"},
-    packages=setuptools.find_packages(where="notebook_comprehend_train_deploy_project"),
+    package_dir={"": "workmailorg_project"},
+    packages=setuptools.find_packages(where="workmailorg_project"),
 
     install_requires=[
         "aws-cdk.core==1.110.1",
