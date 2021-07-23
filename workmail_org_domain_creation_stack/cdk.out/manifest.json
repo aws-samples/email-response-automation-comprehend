@@ -1,0 +1,944 @@
+{
+  "version": "12.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "WorkMailOrgStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "WorkMailOrgStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/WorkMailOrgStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287",
+              "id": "13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287",
+              "packaging": "zip",
+              "sourceHash": "13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287",
+              "s3BucketParameter": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3Bucket7B93995E",
+              "s3KeyParameter": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3VersionKey1A86B897",
+              "artifactHashParameter": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287ArtifactHash1EE0D965"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/construct-compat.js:405:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:175:29)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c",
+              "id": "c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c",
+              "packaging": "zip",
+              "sourceHash": "c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c",
+              "s3BucketParameter": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3BucketEAC9DD43",
+              "s3KeyParameter": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7",
+              "artifactHashParameter": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cArtifactHash627DAAA7"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/construct-compat.js:405:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:175:29)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24",
+              "id": "67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24",
+              "packaging": "zip",
+              "sourceHash": "67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24",
+              "s3BucketParameter": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3Bucket4D46ABB5",
+              "s3KeyParameter": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3VersionKeyB0F28861",
+              "artifactHashParameter": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24ArtifactHashBA91B77F"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/construct-compat.js:405:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:175:29)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "new LogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:83:23)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:70:16)",
+              "new LogRetention (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:32:31)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:187:34)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/OrganizationName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OrganizationName",
+            "trace": [
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/UserName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserName",
+            "trace": [
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/PassWord": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PassWord",
+            "trace": [
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/WorkMailOrg/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WorkMailOrgServiceRole0E700F2D",
+            "trace": [
+              "new Role (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:79:35)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/WorkMailOrg/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WorkMailOrgF5D77A7B",
+            "trace": [
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:135:26)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/AssetParameters/13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3Bucket7B93995E",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/AssetParameters/13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3VersionKey1A86B897",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/AssetParameters/13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287ArtifactHash1EE0D965",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/AssetParameters/c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3BucketEAC9DD43",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/AssetParameters/c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/AssetParameters/c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cArtifactHash627DAAA7",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/AssetParameters/67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3Bucket4D46ABB5",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "new LogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:83:23)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:70:16)",
+              "new LogRetention (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:32:31)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:187:34)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/AssetParameters/67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3VersionKeyB0F28861",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "new LogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:83:23)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:70:16)",
+              "new LogRetention (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:32:31)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:187:34)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/AssetParameters/67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24ArtifactHashBA91B77F",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+              "Stack.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+              "new Asset (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "new LogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:83:23)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:70:16)",
+              "new LogRetention (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:32:31)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:187:34)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail_custom_resource_lambda_policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailcustomresourcelambdapolicyCA3E5D07",
+            "trace": [
+              "new Policy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org is complete/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgiscompleteServiceRoleAAEB0BAE",
+            "trace": [
+              "new Role (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:79:35)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org is complete/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgiscomplete68328A94",
+            "trace": [
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:135:26)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/is_complete_custom_resource_lambda_policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iscompletecustomresourcelambdapolicy1BD18029",
+            "trace": [
+              "new Policy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-onEvent/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkonEventServiceRole1600D241",
+            "trace": [
+              "new Role (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:79:35)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-onEvent/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkonEventServiceRoleDefaultPolicy9006DEEC",
+            "trace": [
+              "new Policy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:205:34)",
+              "Function.addToPrincipal (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/grant.js:90:65)",
+              "Function.addToPrincipalOrResource (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/grant.js:45:30)",
+              "Function.grantInvoke (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:125:31)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:82:29)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-onEvent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkonEvent525E955D",
+            "trace": [
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:135:26)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-onEvent/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkonEventLogRetention8C75F29F",
+            "trace": [
+              "new LogRetention (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:36:26)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:187:34)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-isComplete/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkisCompleteServiceRole3147C0C0",
+            "trace": [
+              "new Role (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:79:35)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:41:45)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-isComplete/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkisCompleteServiceRoleDefaultPolicy2559A1CE",
+            "trace": [
+              "new Policy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:205:34)",
+              "Function.addToPrincipal (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/grant.js:90:65)",
+              "Function.addToPrincipalOrResource (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/grant.js:45:30)",
+              "Function.grantInvoke (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:125:31)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:82:29)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:41:45)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-isComplete/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkisComplete5B724C1E",
+            "trace": [
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:135:26)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:41:45)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-isComplete/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkisCompleteLogRetention6350EC2A",
+            "trace": [
+              "new LogRetention (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:36:26)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:187:34)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:41:45)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-onTimeout/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkonTimeoutServiceRole49BC89FC",
+            "trace": [
+              "new Role (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:79:35)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:42:42)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-onTimeout/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkonTimeoutServiceRoleDefaultPolicyD2CCC60E",
+            "trace": [
+              "new Policy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:205:34)",
+              "Function.addToPrincipal (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/grant.js:90:65)",
+              "Function.addToPrincipalOrResource (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/grant.js:45:30)",
+              "Function.grantInvoke (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:125:31)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:82:29)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:42:42)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-onTimeout/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkonTimeout67A1B0AF",
+            "trace": [
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:135:26)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:42:42)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/framework-onTimeout/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgframeworkonTimeoutLogRetentionCCB9DE30",
+            "trace": [
+              "new LogRetention (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:36:26)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:187:34)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:42:42)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/waiter-state-machine/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgwaiterstatemachineRole6488C4CF",
+            "trace": [
+              "new Role (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new WaiterStateMachine (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/waiter-state-machine.js:19:22)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:44:40)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/waiter-state-machine/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgwaiterstatemachineRoleDefaultPolicy5C93E52A",
+            "trace": [
+              "new Policy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:205:34)",
+              "Role.addToPolicy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:217:21)",
+              "new WaiterStateMachine (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/waiter-state-machine.js:22:14)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:44:40)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/workmail-org/waiter-state-machine/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "workmailorgwaiterstatemachineDE74C98F",
+            "trace": [
+              "new WaiterStateMachine (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/waiter-state-machine.js:55:26)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:44:40)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+            "trace": [
+              "new Role (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new LogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:87:36)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:70:16)",
+              "new LogRetention (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:32:31)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:187:34)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+            "trace": [
+              "new Policy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-iam/lib/role.js:205:34)",
+              "new LogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:92:14)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:70:16)",
+              "new LogRetention (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:32:31)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:187:34)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "trace": [
+              "new LogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:100:26)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:70:16)",
+              "new LogRetention (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-logs/lib/log-retention.js:32:31)",
+              "new Function (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/aws-lambda/lib/function.js:187:34)",
+              "Provider.createFunction (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:69:20)",
+              "new Provider (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/custom-resources/lib/provider-framework/provider.js:39:38)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/WorkMailOrgResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WorkMailOrgResource",
+            "trace": [
+              "new CustomResource (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/custom-resource.js:30:25)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7970:107",
+              "Kernel._ensureSync (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8563:28)",
+              "Kernel.invoke (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ],
+        "/WorkMailOrgStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+              "visit (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+              "visit (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+              "injectMetadataResources (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+              "Object.synthesize (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/jsii-kernel-duOjVF/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8582:24)",
+              "/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7970:107",
+              "Kernel._ensureSync (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:8563:28)",
+              "Kernel.invoke (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/r7/53y081sx3c51grzhwncmcsn80000gs/T/tmp4m9eyx_e/lib/program.js:9443:46)",
+              "processImmediate (node:internal/timers:464:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "WorkMailOrgStack"
+    }
+  }
+}

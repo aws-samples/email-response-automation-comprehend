@@ -1,0 +1,1314 @@
+{
+  "Parameters": {
+    "OrganizationName": {
+      "Type": "String",
+      "Default": "my-sample-workmail-org"
+    },
+    "UserName": {
+      "Type": "String",
+      "Default": "support"
+    },
+    "PassWord": {
+      "Type": "String",
+      "Default": "Welcome@123"
+    },
+    "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3Bucket7B93995E": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287\""
+    },
+    "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3VersionKey1A86B897": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287\""
+    },
+    "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287ArtifactHash1EE0D965": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287\""
+    },
+    "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3BucketEAC9DD43": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c\""
+    },
+    "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c\""
+    },
+    "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cArtifactHash627DAAA7": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c\""
+    },
+    "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3Bucket4D46ABB5": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24\""
+    },
+    "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3VersionKeyB0F28861": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24\""
+    },
+    "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24ArtifactHashBA91B77F": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24\""
+    }
+  },
+  "Resources": {
+    "WorkMailOrgServiceRole0E700F2D": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/WorkMailOrg/ServiceRole/Resource"
+      }
+    },
+    "WorkMailOrgF5D77A7B": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3Bucket7B93995E"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3VersionKey1A86B897"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3VersionKey1A86B897"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "WorkMailOrgServiceRole0E700F2D",
+            "Arn"
+          ]
+        },
+        "Environment": {
+          "Variables": {
+            "work_org_name": {
+              "Ref": "OrganizationName"
+            },
+            "user_name": {
+              "Ref": "UserName"
+            },
+            "password": {
+              "Ref": "PassWord"
+            }
+          }
+        },
+        "FunctionName": "workmail_org_creation",
+        "Handler": "workmailcreateorg.handler",
+        "Runtime": "python3.6"
+      },
+      "DependsOn": [
+        "WorkMailOrgServiceRole0E700F2D"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/WorkMailOrg/Resource",
+        "aws:asset:path": "asset.13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287",
+        "aws:asset:property": "Code"
+      }
+    },
+    "workmailcustomresourcelambdapolicyCA3E5D07": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "workmail:*",
+                "ds:*",
+                "ses:*"
+              ],
+              "Effect": "Allow",
+              "Resource": "*"
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "workmail_custom_resource_lambda_policy",
+        "Roles": [
+          {
+            "Ref": "WorkMailOrgServiceRole0E700F2D"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail_custom_resource_lambda_policy/Resource"
+      }
+    },
+    "workmailorgiscompleteServiceRoleAAEB0BAE": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org is complete/ServiceRole/Resource"
+      }
+    },
+    "workmailorgiscomplete68328A94": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3Bucket7B93995E"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3VersionKey1A86B897"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287S3VersionKey1A86B897"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "workmailorgiscompleteServiceRoleAAEB0BAE",
+            "Arn"
+          ]
+        },
+        "Environment": {
+          "Variables": {
+            "work_org_name": {
+              "Ref": "OrganizationName"
+            },
+            "user_name": {
+              "Ref": "UserName"
+            },
+            "password": {
+              "Ref": "PassWord"
+            }
+          }
+        },
+        "FunctionName": "resource-is-complete-lambda",
+        "Handler": "workmailcreateorg.is_complete",
+        "Runtime": "python3.6"
+      },
+      "DependsOn": [
+        "workmailorgiscompleteServiceRoleAAEB0BAE"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org is complete/Resource",
+        "aws:asset:path": "asset.13e3c3a14b46ec7a11db48c4c44f947315386623698e4e35c5b4c2f23b5a6287",
+        "aws:asset:property": "Code"
+      }
+    },
+    "iscompletecustomresourcelambdapolicy1BD18029": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "workmail:*",
+                "ds:*",
+                "ses:*"
+              ],
+              "Effect": "Allow",
+              "Resource": "*"
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "is_complete_custom_resource_lambda_policy",
+        "Roles": [
+          {
+            "Ref": "workmailorgiscompleteServiceRoleAAEB0BAE"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/is_complete_custom_resource_lambda_policy/Resource"
+      }
+    },
+    "workmailorgframeworkonEventServiceRole1600D241": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-onEvent/ServiceRole/Resource"
+      }
+    },
+    "workmailorgframeworkonEventServiceRoleDefaultPolicy9006DEEC": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "WorkMailOrgF5D77A7B",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "workmailorgiscomplete68328A94",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": "states:StartExecution",
+              "Effect": "Allow",
+              "Resource": {
+                "Ref": "workmailorgwaiterstatemachineDE74C98F"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "workmailorgframeworkonEventServiceRoleDefaultPolicy9006DEEC",
+        "Roles": [
+          {
+            "Ref": "workmailorgframeworkonEventServiceRole1600D241"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-onEvent/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "workmailorgframeworkonEvent525E955D": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3BucketEAC9DD43"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "workmailorgframeworkonEventServiceRole1600D241",
+            "Arn"
+          ]
+        },
+        "Description": "AWS CDK resource provider framework - onEvent (WorkMailOrgStack/workmail-org)",
+        "Environment": {
+          "Variables": {
+            "USER_ON_EVENT_FUNCTION_ARN": {
+              "Fn::GetAtt": [
+                "WorkMailOrgF5D77A7B",
+                "Arn"
+              ]
+            },
+            "USER_IS_COMPLETE_FUNCTION_ARN": {
+              "Fn::GetAtt": [
+                "workmailorgiscomplete68328A94",
+                "Arn"
+              ]
+            },
+            "WAITER_STATE_MACHINE_ARN": {
+              "Ref": "workmailorgwaiterstatemachineDE74C98F"
+            }
+          }
+        },
+        "Handler": "framework.onEvent",
+        "Runtime": "nodejs14.x",
+        "Timeout": 900
+      },
+      "DependsOn": [
+        "workmailorgframeworkonEventServiceRoleDefaultPolicy9006DEEC",
+        "workmailorgframeworkonEventServiceRole1600D241"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-onEvent/Resource",
+        "aws:asset:path": "asset.c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c",
+        "aws:asset:property": "Code"
+      }
+    },
+    "workmailorgframeworkonEventLogRetention8C75F29F": {
+      "Type": "Custom::LogRetention",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "Arn"
+          ]
+        },
+        "LogGroupName": {
+          "Fn::Join": [
+            "",
+            [
+              "/aws/lambda/",
+              {
+                "Ref": "workmailorgframeworkonEvent525E955D"
+              }
+            ]
+          ]
+        },
+        "RetentionInDays": 1
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-onEvent/LogRetention/Resource"
+      }
+    },
+    "workmailorgframeworkisCompleteServiceRole3147C0C0": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-isComplete/ServiceRole/Resource"
+      }
+    },
+    "workmailorgframeworkisCompleteServiceRoleDefaultPolicy2559A1CE": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "WorkMailOrgF5D77A7B",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "workmailorgiscomplete68328A94",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "workmailorgframeworkisCompleteServiceRoleDefaultPolicy2559A1CE",
+        "Roles": [
+          {
+            "Ref": "workmailorgframeworkisCompleteServiceRole3147C0C0"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-isComplete/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "workmailorgframeworkisComplete5B724C1E": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3BucketEAC9DD43"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "workmailorgframeworkisCompleteServiceRole3147C0C0",
+            "Arn"
+          ]
+        },
+        "Description": "AWS CDK resource provider framework - isComplete (WorkMailOrgStack/workmail-org)",
+        "Environment": {
+          "Variables": {
+            "USER_ON_EVENT_FUNCTION_ARN": {
+              "Fn::GetAtt": [
+                "WorkMailOrgF5D77A7B",
+                "Arn"
+              ]
+            },
+            "USER_IS_COMPLETE_FUNCTION_ARN": {
+              "Fn::GetAtt": [
+                "workmailorgiscomplete68328A94",
+                "Arn"
+              ]
+            }
+          }
+        },
+        "Handler": "framework.isComplete",
+        "Runtime": "nodejs14.x",
+        "Timeout": 900
+      },
+      "DependsOn": [
+        "workmailorgframeworkisCompleteServiceRoleDefaultPolicy2559A1CE",
+        "workmailorgframeworkisCompleteServiceRole3147C0C0"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-isComplete/Resource",
+        "aws:asset:path": "asset.c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c",
+        "aws:asset:property": "Code"
+      }
+    },
+    "workmailorgframeworkisCompleteLogRetention6350EC2A": {
+      "Type": "Custom::LogRetention",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "Arn"
+          ]
+        },
+        "LogGroupName": {
+          "Fn::Join": [
+            "",
+            [
+              "/aws/lambda/",
+              {
+                "Ref": "workmailorgframeworkisComplete5B724C1E"
+              }
+            ]
+          ]
+        },
+        "RetentionInDays": 1
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-isComplete/LogRetention/Resource"
+      }
+    },
+    "workmailorgframeworkonTimeoutServiceRole49BC89FC": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-onTimeout/ServiceRole/Resource"
+      }
+    },
+    "workmailorgframeworkonTimeoutServiceRoleDefaultPolicyD2CCC60E": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "WorkMailOrgF5D77A7B",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "workmailorgiscomplete68328A94",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "workmailorgframeworkonTimeoutServiceRoleDefaultPolicyD2CCC60E",
+        "Roles": [
+          {
+            "Ref": "workmailorgframeworkonTimeoutServiceRole49BC89FC"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-onTimeout/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "workmailorgframeworkonTimeout67A1B0AF": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3BucketEAC9DD43"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "workmailorgframeworkonTimeoutServiceRole49BC89FC",
+            "Arn"
+          ]
+        },
+        "Description": "AWS CDK resource provider framework - onTimeout (WorkMailOrgStack/workmail-org)",
+        "Environment": {
+          "Variables": {
+            "USER_ON_EVENT_FUNCTION_ARN": {
+              "Fn::GetAtt": [
+                "WorkMailOrgF5D77A7B",
+                "Arn"
+              ]
+            },
+            "USER_IS_COMPLETE_FUNCTION_ARN": {
+              "Fn::GetAtt": [
+                "workmailorgiscomplete68328A94",
+                "Arn"
+              ]
+            }
+          }
+        },
+        "Handler": "framework.onTimeout",
+        "Runtime": "nodejs14.x",
+        "Timeout": 900
+      },
+      "DependsOn": [
+        "workmailorgframeworkonTimeoutServiceRoleDefaultPolicyD2CCC60E",
+        "workmailorgframeworkonTimeoutServiceRole49BC89FC"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-onTimeout/Resource",
+        "aws:asset:path": "asset.c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c",
+        "aws:asset:property": "Code"
+      }
+    },
+    "workmailorgframeworkonTimeoutLogRetentionCCB9DE30": {
+      "Type": "Custom::LogRetention",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "Arn"
+          ]
+        },
+        "LogGroupName": {
+          "Fn::Join": [
+            "",
+            [
+              "/aws/lambda/",
+              {
+                "Ref": "workmailorgframeworkonTimeout67A1B0AF"
+              }
+            ]
+          ]
+        },
+        "RetentionInDays": 1
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/framework-onTimeout/LogRetention/Resource"
+      }
+    },
+    "workmailorgwaiterstatemachineRole6488C4CF": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "states.",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ".amazonaws.com"
+                    ]
+                  ]
+                }
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/waiter-state-machine/Role/Resource"
+      }
+    },
+    "workmailorgwaiterstatemachineRoleDefaultPolicy5C93E52A": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "workmailorgframeworkisComplete5B724C1E",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "workmailorgframeworkonTimeout67A1B0AF",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "workmailorgwaiterstatemachineRoleDefaultPolicy5C93E52A",
+        "Roles": [
+          {
+            "Ref": "workmailorgwaiterstatemachineRole6488C4CF"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/waiter-state-machine/Role/DefaultPolicy/Resource"
+      }
+    },
+    "workmailorgwaiterstatemachineDE74C98F": {
+      "Type": "AWS::StepFunctions::StateMachine",
+      "Properties": {
+        "DefinitionString": {
+          "Fn::Join": [
+            "",
+            [
+              "{\"StartAt\":\"framework-isComplete-task\",\"States\":{\"framework-isComplete-task\":{\"End\":true,\"Retry\":[{\"ErrorEquals\":[\"States.ALL\"],\"IntervalSeconds\":5,\"MaxAttempts\":360,\"BackoffRate\":1}],\"Catch\":[{\"ErrorEquals\":[\"States.ALL\"],\"Next\":\"framework-onTimeout-task\"}],\"Type\":\"Task\",\"Resource\":\"",
+              {
+                "Fn::GetAtt": [
+                  "workmailorgframeworkisComplete5B724C1E",
+                  "Arn"
+                ]
+              },
+              "\"},\"framework-onTimeout-task\":{\"End\":true,\"Type\":\"Task\",\"Resource\":\"",
+              {
+                "Fn::GetAtt": [
+                  "workmailorgframeworkonTimeout67A1B0AF",
+                  "Arn"
+                ]
+              },
+              "\"}}}"
+            ]
+          ]
+        },
+        "RoleArn": {
+          "Fn::GetAtt": [
+            "workmailorgwaiterstatemachineRole6488C4CF",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "workmailorgwaiterstatemachineRoleDefaultPolicy5C93E52A",
+        "workmailorgwaiterstatemachineRole6488C4CF"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/workmail-org/waiter-state-machine/Resource"
+      }
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource"
+      }
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "logs:PutRetentionPolicy",
+                "logs:DeleteRetentionPolicy"
+              ],
+              "Effect": "Allow",
+              "Resource": "*"
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+        "Roles": [
+          {
+            "Ref": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "index.handler",
+        "Runtime": "nodejs12.x",
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3Bucket4D46ABB5"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3VersionKeyB0F28861"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3VersionKeyB0F28861"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+        "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource"
+      }
+    },
+    "WorkMailOrgResource": {
+      "Type": "AWS::CloudFormation::CustomResource",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "workmailorgframeworkonEvent525E955D",
+            "Arn"
+          ]
+        }
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/WorkMailOrgResource/Default"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAE0WOQW/CMAyFfwt319Bx2ZFRaScOVfkFWWq6rE0sxckQivrfSQJsp/ee5Wd/LbbtDnebg7pKo8d5mzR7wnQOSs/QXVyvvLIUyMOHCIU8n4yboGMnwUcdys5AwtFrgj/TRQls/+PF5cJogmG3QnmVFmW/RoXpMzpdxmXn5VcwymIaeKnVqj0vRt8qUXUryL5RBUmwkuWMx6hnCkclBAtPgieehszuHkd1hWr8k0qw9/xrRvIr9LfwzW67x3d82/yIMY2PuWUJh4feAe+VBKMoAQAA"
+      },
+      "Metadata": {
+        "aws:cdk:path": "WorkMailOrgStack/CDKMetadata/Default"
+      },
+      "Condition": "CDKMetadataAvailable"
+    }
+  },
+  "Conditions": {
+    "CDKMetadataAvailable": {
+      "Fn::Or": [
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "af-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ca-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-northwest-1"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-3"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "me-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "sa-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-2"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
