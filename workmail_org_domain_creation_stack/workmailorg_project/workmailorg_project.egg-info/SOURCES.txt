@@ -1,7 +1,0 @@
-README.md
-setup.py
-emailbot_project/emailbot_project.egg-info/PKG-INFO
-emailbot_project/emailbot_project.egg-info/SOURCES.txt
-emailbot_project/emailbot_project.egg-info/dependency_links.txt
-emailbot_project/emailbot_project.egg-info/requires.txt
-emailbot_project/emailbot_project.egg-info/top_level.txt
