@@ -38,7 +38,8 @@ Once the virtualenv is activated, you can install the required dependencies.
 $ pip install -r requirements.txt
 
 3. Deploying the solution :
-Option 1 : Deploying with new Amazon Healthlake Datasource : Execute following command by passing two bucket names created in step 1. This will create both the stacks.
+###Step 1 : 
+Deploying with new Amazon Healthlake Datasource : Execute following command by passing two bucket names created in step 1. This will create both the stacks.
 
 cdk deploy ahl-lakeformation-workflow-stack -c healthlake_ds_name=<name_for_healthlake> -c source_data_s3_bucket=<healthlake-input-databucket> -c datalake_s3_bucket=<datalake-bucket> -c region=<region>
 Option 2 : Deploying with existing Amazon Healthlake Datasource : Execute following command by passing two bucket names created in step 1 and also the id of the Healthlake data source. This will create only the ahl_lakeformation_workdflow_stack the stack, rereferencing the existing Healthlake data source.
