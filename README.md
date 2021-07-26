@@ -58,36 +58,4 @@ Note : Please note that these both deployments approximately 20 to 25 minutes
 After the stacks are succefully deployed (You can see if there is an error as the cdk output otherwise it says stacks creation succeful.), please open the .ipynb notebook and execute all the scripts in the notebook in sequence. The last script in the notebook will deploy the model and gives you the ARN of the deployed resource. Please use this ARN as the parameter for the next stack deployment.
 
 
-
-## Services used in this project
-- Amazon Comprehend - For Email Classification
-- Amazon Workamil - For Email Domain, Support user Email Alias and Inbox Creation
-- DynamoDB - For storing, and retrieiving email templates and transaction status
-- SES/SNS - For Email response back to customer email
-- Lambda - For triggering the event upon receiving the email and response callout
-- Sagemaker Notebook - For Custom Classification Training and Deployment
-- CDK - For infrstrucutre deployment
-
-## List of steps required to complete this project
-1. Donwload and deploy the CDK using the repository notebook_comprehend_train_deploy_project. This will create the notbook instnce with pre-loaded .ipynb notebook file with IAM role required to execute the trining and deployment
-2. Execute the .ipynb file from notebook instance. This will execute the custom classification training and deployment in Amazon Comprehend
-3. Download and deploy the CDK using the repository comprehend_email_classification_project. This will create the Amazon WorkMail organization, domain, users, and user registration to the domain. When csutomer sends the email, you will see the message in inbox of this support user.
-4. Download and deploy the CDK using repository xxxxxxxxxxxxx. This will create the Dynamo DB table,SES, and Lambda functions required to store the email template and send the email back to customer with response.
-5. Adding Lambda function in Workmail Organization inbound rules to invoke the lambda function whenever user sends an email.
-
-## Tutorial
-### Step1: Deploying SageMaker Notebook resource
-
-Check whether CDK is installed in your terminal
-<clipboard-copy>
-
-CDK --version </code>
-</clipboard-copy>
-
-
-### Step2: Comprehend Customer Classification Training and Deployment with sample data
-### Step3: Deploying Amazon WorkMail organization, domain, Inbox and users
-### Step4: Deploying AWS Lambda, Amazon DynamoDB, Amazon Simple Notification Service 
-### Step5: Configuring inbound rules with Lambda function
-
 ##Testing the solution
