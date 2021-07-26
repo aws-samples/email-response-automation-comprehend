@@ -26,8 +26,10 @@ workmail-organization-domain-user-dev-stack : Creates the Amazon workmail with d
 1. Clone the repository.
 
 2. This project is set up like a standard Python project. To create the virtualenv it assumes that there is a python3 (or python for Windows) executable in your path with access to the venv package. create the virtualenv using following command.
-
+```
 $ python3 -m venv .venv 
+```
+
 Use the following step to activate your virtualenv.
 
 $ source .venv/bin/activate
