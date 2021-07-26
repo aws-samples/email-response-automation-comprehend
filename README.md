@@ -13,14 +13,14 @@ Many of a times, customer asks the basic questions and it is unnecessary that cu
 ## CDK project structure :
 The soultion comprised of two cdk stacks.
 
-comprehend-custom-classifier-dev-notebook-stack : Creates the Amazon sagemaker jupyter notbook with appropriate IAM role required for executing comprehend custom classification training and deployment job with S3 data access
-workmail-organization-domain-user-dev-stack : Creates the Amazon workmail with domain, user, inbox acess.
+comprehend-custom-classifier-dev-notebook-stack : Creates the Amazon sagemaker jupyter notbook instance pre-loaded with .ipynb notbook and creates IAM role required for executing comprehend custom classification training, deployment, and S3 data access.
+workmail-organization-domain-user-dev-stack : Creates the Amazon workmail with domain, user, inbox access.
 
 ## Pre-requisites
 - An AWS Account with region us-east-1
 - Make sure servics mentioned in the architecturea and its service limits in region us-east-1 and your account
-- AWS CLI and AWS CDK installed installed and configured with Access Key ID and Secret Access Key to create the resources in your AWS account
-- Python3-pip installed in you terminal or IDK
+- AWS CLI and AWS CDK installed installed and configured with Access Key ID and Secret Access Key with access to AWS CloudFormation to create resources in your AWS account
+- Python3-pip installed in you terminal or any IDK 
 
 ## Steps to deploy the project
 1. Clone the repository.
@@ -43,8 +43,7 @@ Once the virtualenv is activated, you can install the required dependencies.
 $ pip install -r requirements.txt
 ```
 3. Deploying the solution :
-   ### Step 1 : 
-Deploying with new Amazon Healthlake Datasource : Execute following command by passing two bucket names created in step 1. This will create both the stacks.
+Deploying new Sagemaker Notebook Instance with IAM  : Execute following command by passing two bucket names created in step 1. This will create both the stacks.
 
 cdk deploy ahl-lakeformation-workflow-stack -c healthlake_ds_name=<name_for_healthlake> -c source_data_s3_bucket=<healthlake-input-databucket> -c datalake_s3_bucket=<datalake-bucket> -c region=<region>
 Option 2 : Deploying with existing Amazon Healthlake Datasource : Execute following command by passing two bucket names created in step 1 and also the id of the Healthlake data source. This will create only the ahl_lakeformation_workdflow_stack the stack, rereferencing the existing Healthlake data source.
