@@ -57,5 +57,12 @@ Note : Please note that these both deployments approximately 20 to 25 minutes
 
 After the stacks are succefully deployed (You can see if there is an error as the cdk output otherwise it says stacks creation succeful.), please open the .ipynb notebook and execute all the scripts in the notebook in sequence. The last script in the notebook will deploy the model and gives you the ARN of the deployed resource. Please use this ARN as the parameter for the next stack deployment.
 
+Deploying AWS Lammbda fucntions, Amazon dynamoDB and SNS notifications: Execute the following command 
+```
+CDK deploy <Shamica CDK stack>
+```
+
+Setting up the Inbound rules in Amazon Workmail using the lambda function generated in previous stack. Please use the  'Amazon Workmail Inbound Rule Setup with Lambda.docx' file to complete this setup
+
 
 ## Testing the solution
