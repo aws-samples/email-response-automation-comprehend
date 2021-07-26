@@ -42,11 +42,10 @@ Once the virtualenv is activated, you can install the required dependencies.
 ```
 $ pip install -r requirements.txt
 ```
-3. Deploying the solution :
-Deploying new Sagemaker Notebook Instance with IAM  : Execute following command by passing two bucket names created in step 1. This will create both the stacks.
+4. Deploying the solution :
+Deploying new Sagemaker Notebook Instance with IAM Roles and pre-loaded .ipynb notebook : Execute following command by passing optional paramaters
 
-cdk deploy ahl-lakeformation-workflow-stack -c healthlake_ds_name=<name_for_healthlake> -c source_data_s3_bucket=<healthlake-input-databucket> -c datalake_s3_bucket=<datalake-bucket> -c region=<region>
-Option 2 : Deploying with existing Amazon Healthlake Datasource : Execute following command by passing two bucket names created in step 1 and also the id of the Healthlake data source. This will create only the ahl_lakeformation_workdflow_stack the stack, rereferencing the existing Healthlake data source.
+cdk deploy comprehend-custom-classifier-dev-notebook-stack
 
 cdk deploy ahl-lakeformation-workflow-stack -c healthlake_ds_name=<name_for_healthlake> -c source_data_s3_bucket=<healthlake-input-databucket> -c datalake_s3_bucket=<datalake-bucket> -c region=<region> healthlake_ds_id=<existing_healthlake_ds_id>
 Arguements to the stack creation :
