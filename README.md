@@ -34,11 +34,11 @@ $ python3 -m venv .venv
 ```
 $ source .venv/bin/activate
 ```
-    If you are a Windows platform, you would activate the virtualenv like this:
+If you are a Windows platform, you would activate the virtualenv like this:
 ```
 % .venv\Scripts\activate.bat
 ```
-    Once the virtualenv is activated, you can install the required dependencies.
+Once the virtualenv is activated, you can install the required dependencies.
 ```
 $ pip install -r requirements.txt
 ```
