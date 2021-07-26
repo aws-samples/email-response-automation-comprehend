@@ -30,15 +30,18 @@ workmail-organization-domain-user-dev-stack : Creates the Amazon workmail with d
 $ python3 -m venv .venv 
 ```
 
-Use the following step to activate your virtualenv.
-
+3. Use the following step to activate your virtualenv.
+```
 $ source .venv/bin/activate
-If you are a Windows platform, you would activate the virtualenv like this:
-
+```
+    If you are a Windows platform, you would activate the virtualenv like this:
+```
 % .venv\Scripts\activate.bat
-Once the virtualenv is activated, you can install the required dependencies.
+```
+    Once the virtualenv is activated, you can install the required dependencies.
+```
 $ pip install -r requirements.txt
-
+```
 3. Deploying the solution :
 ### Step 1 : 
 Deploying with new Amazon Healthlake Datasource : Execute following command by passing two bucket names created in step 1. This will create both the stacks.
