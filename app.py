@@ -15,6 +15,7 @@ from comprehend_custom_classification.workmailorg_project_stack import WorkMailO
 #from EmailbotProjectStack.EmailbotProjectStack import EmailbotProjectStack
 
 app = core.App()
+
 NotebookComprehendTrainDeployProjectStack(app, "comprehend-custom-classifier-dev-notebook-stack")
 WorkMailOrgStack(app, "workmail-organization-domain-user-dev-stack")
 
