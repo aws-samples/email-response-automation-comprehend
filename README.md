@@ -58,4 +58,4 @@ Note : Please note that these both deployments approximately 20 to 25 minutes
 After the stacks are succefully deployed (You can see if there is an error as the cdk output otherwise it says stacks creation succeful.), please open the .ipynb notebook and execute all the scripts in the notebook in sequence. The last script in the notebook will deploy the model and gives you the ARN of the deployed resource. Please use this ARN as the parameter for the next stack deployment.
 
 
-##Testing the solution
+## Testing the solution
