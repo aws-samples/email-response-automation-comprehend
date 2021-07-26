@@ -43,22 +43,22 @@ Once the virtualenv is activated, you can install the required dependencies.
 $ pip install -r requirements.txt
 ```
 4. Deploying the solution :
+
 Deploying new Sagemaker Notebook Instance with IAM Roles and pre-loaded .ipynb notebook : Execute following command by passing optional paramaters
 
-cdk deploy comprehend-custom-classifier-dev-notebook-stack
+cdk deploy comprehend-custom-classifier-dev-notebook-stack  --parameters NotebookName=<Notebook Name> --parameters NotebookConfigName=<Notebook Config Name> --parameters RoleName=<SageMaker execution role name>
 
-cdk deploy ahl-lakeformation-workflow-stack -c healthlake_ds_name=<name_for_healthlake> -c source_data_s3_bucket=<healthlake-input-databucket> -c datalake_s3_bucket=<datalake-bucket> -c region=<region> healthlake_ds_id=<existing_healthlake_ds_id>
+Deploying new Workmail domain, user, user registration and inbox: Execute following command by passing optional paramaters
+
+cdk deploy workmail-organization-domain-user-dev-stack --parameters OrganizationName=<Organization Name> --parameters UserName=<Support Username> --parameters PassWord=<Password>
+
 Arguements to the stack creation :
 
-healthlake_ds_name (Required) : Name give the the Amazon Healthlake datasource. (eg:- -c healthlake_ds_name=ABC-Healthlake-DS1)
-source_data_s3_bucket (Requird) : Source data bucket (eg:- -c healthlake-input-databucket)
-datalake_s3_bucket (Requird) : Datalake bucket (eg:- -c datalake_s3_bucket=datalake-bucket)
-healthdatabase (Optional) : Name of the glue data catalog database. If not provided default will healthdatabase.
-region (Optional) : Region where the stacks needs to be deployed If not provided default will be us-east-1.
-healthlake_ds_id (Optional) : Only required if you are deploying the solution pointing to an existing Amazon Healthlake datasource.
-Note : Please note that this deployment approximately 30-35 minutes depending on the time it takes to create Healthlake datasource.
+Note : Please note that these both deployments approximately 20 to 25 minutes
 
-After the stacks are succefully deployed (You can see if there is an error as the cdk output otherwise it says stacks creation succeful.), then it is time to execute the workflow.
+After the stacks are succefully deployed (You can see if there is an error as the cdk output otherwise it says stacks creation succeful.), please open the .ipynb notebook
+
+
 
 ## Services used in this project
 - Amazon Comprehend - For Email Classification
