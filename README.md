@@ -10,7 +10,7 @@ Many of a times, customer asks the basic questions and it is unnecessary that cu
 
 ![Automated_Email_Response_using_Amazon_Comprehend](/uploads/e7cdbe48f2e56b46086d962d04887d62/Automated_Email_Response_using_Amazon_Comprehend.jpg)
 
-##CDK project structure :
+## CDK project structure :
 The soultion comprised of two cdk stacks.
 
 comprehend-custom-classifier-dev-notebook-stack : Creates the Amazon sagemaker jupyter notbook with appropriate IAM role required for executing comprehend custom classification training and deployment job with S3 data access
@@ -22,7 +22,7 @@ workmail-organization-domain-user-dev-stack : Creates the Amazon workmail with d
 - AWS CLI and AWS CDK installed installed and configured with Access Key ID and Secret Access Key to create the resources in your AWS account
 - Python3-pip installed in you terminal or IDK
 
-##Steps to deploy the project
+## Steps to deploy the project
 1. Clone the repository.
 
 2. This project is set up like a standard Python project. To create the virtualenv it assumes that there is a python3 (or python for Windows) executable in your path with access to the venv package. create the virtualenv using following command.
