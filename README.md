@@ -53,8 +53,6 @@ Deploying new Workmail domain, user, user registration and inbox: Execute follow
 ```
 cdk deploy workmail-organization-domain-user-dev-stack --parameters OrganizationName=<Organization Name> --parameters UserName=<Support Username> --parameters PassWord=<Password>
 ```
-Arguements to the stack creation :
-```
 Note : Please note that these both deployments approximately 20 to 25 minutes
 
 After the stacks are succefully deployed (You can see if there is an error as the cdk output otherwise it says stacks creation succeful.), please open the .ipynb notebook
