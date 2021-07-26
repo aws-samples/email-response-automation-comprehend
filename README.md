@@ -45,15 +45,16 @@ $ pip install -r requirements.txt
 4. Deploying the solution :
 
 Deploying new Sagemaker Notebook Instance with IAM Roles and pre-loaded .ipynb notebook : Execute following command by passing optional paramaters
-
+```
 cdk deploy comprehend-custom-classifier-dev-notebook-stack  --parameters NotebookName=<Notebook Name> --parameters NotebookConfigName=<Notebook Config Name> --parameters RoleName=<SageMaker execution role name>
+```
 
 Deploying new Workmail domain, user, user registration and inbox: Execute following command by passing optional paramaters
-
+```
 cdk deploy workmail-organization-domain-user-dev-stack --parameters OrganizationName=<Organization Name> --parameters UserName=<Support Username> --parameters PassWord=<Password>
-
+```
 Arguements to the stack creation :
-
+```
 Note : Please note that these both deployments approximately 20 to 25 minutes
 
 After the stacks are succefully deployed (You can see if there is an error as the cdk output otherwise it says stacks creation succeful.), please open the .ipynb notebook
