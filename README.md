@@ -65,7 +65,13 @@ Arguments to the stack creation :
 
 Note : Please note that these both deployments approximately 20 to 25 minutes
 
-After the stacks are succefully deployed (You can see if there is an error as the cdk output otherwise it says stacks creation succeful.), please open the .ipynb notebook and execute all the scripts in the notebook in sequence. The last script in the notebook will deploy the model and gives you the ARN of the deployed resource. Please use this ARN as the parameter for the next stack deployment.
+After the stacks are succefully deployed (You can see if there is an error as the cdk output otherwise it says stacks creation succeful.), please open the .ipynb notebook from Sagemaker notebook instance and execute all the scripts in the notebook in sequence. 
+### Steps to open the .ipynb file from the notbook instance
+1. Go to AWS console and select the service 'Amazon Sagemaker'. Maker sure you are in us-east-1 region
+2. Select the Notebook menu and choose Notbook Instances
+
+
+The last script in the notebook will deploy the model and gives you the ARN of the deployed resource. Please use this ARN as the parameter for the next stack deployment.
 
 Deploying AWS Lammbda fucntions, Amazon dynamoDB and SNS notifications: Execute the following command 
 ```
