@@ -64,8 +64,8 @@ cdk deploy -c email_classification_endpoint_arn=<comprehend_classification_endpo
 
 Arguments to the stack creation :
 
-`comprehend_classification_endpoint_arn` : TBD
-`human_workflow_email` : TBD
+* `comprehend_classification_endpoint_arn` : TBD
+* `human_workflow_email` : TBD
 
 Setting up the Inbound rules in Amazon Workmail using the lambda function generated in previous stack. Please use the  'Amazon Workmail Inbound Rule Setup with Lambda.docx' file to complete this setup
 
