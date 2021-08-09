@@ -10,8 +10,8 @@ from aws_cdk import core as cdk
 from aws_cdk import core
 
 
-from comprehend_custom_classification.notebook_comprehend_train_deploy_project_stack import NotebookComprehendTrainDeployProjectStack
-from comprehend_custom_classification.workmailorg_project_stack import WorkMailOrgStack
+from stacks.notebook_comprehend_train_deploy_project_stack import NotebookComprehendTrainDeployProjectStack
+from stacks.workmailorg_project_stack import WorkMailOrgStack
 #from EmailbotProjectStack.EmailbotProjectStack import EmailbotProjectStack
 
 app = core.App()

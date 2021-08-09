@@ -71,7 +71,7 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
 
         #nb_lifecycle_config_name='notbook-lifecycle-load-notebook'
 
-        LifecycleScriptStr = open("./comprehend_custom_classification/nb_lifecycle/lifecycle.sh", "r").read()
+        LifecycleScriptStr = open("./nb_lifecycle/lifecycle.sh", "r").read()
 
         content = [
             {"content": cdk.Fn.base64(LifecycleScriptStr)}

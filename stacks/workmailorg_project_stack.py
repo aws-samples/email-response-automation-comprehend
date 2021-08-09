@@ -28,11 +28,11 @@ class WorkMailOrgStack(core.Stack):
                 #type="String",
                 default='Welcome@123'
                 )
-        create_workmail_org_lambda = lambda_.Function(self, "WorkMailOrg",
+        create_workmail_org_lambda = lambda_.Function(self, "id_WorkMailOrg",
                                                       runtime=lambda_.Runtime.PYTHON_3_6,
                                                       function_name='workmail_org_creation',
                                                       code=lambda_.Code.asset(
-                                                          "comprehend_custom_classification/Lambda"),
+                                                          "lambda/workmail-org-user-domain-lambda"),
                                                       handler="workmailcreateorg.handler",
                                                       environment= {'work_org_name': orgname_param.value_as_string,
                                                                     'user_name': username_param.value_as_string,
@@ -43,7 +43,7 @@ class WorkMailOrgStack(core.Stack):
                 
         create_workmail_org_lambda.role.attach_inline_policy(
             iam.Policy(
-                self, "workmail_custom_resource_lambda_policy",
+                self, "id_workmail_custom_resource_lambda_policy",
                 policy_name = "workmail_custom_resource_lambda_policy",
                 statements = [
                     iam.PolicyStatement(
@@ -60,10 +60,10 @@ class WorkMailOrgStack(core.Stack):
 
 
         is_complete_org = lambda_.Function(
-                                            self, "workmail-org is complete",
+                                            self, "id_workmail_org_is_complete",
                                             function_name="resource-is-complete-lambda",
                                             code=lambda_.Code.asset(
-                                               "comprehend_custom_classification/Lambda"),
+                                               "lambda/workmail-org-user-domain-lambda"),
                                             handler="workmailcreateorg.is_complete",
                                             runtime=lambda_.Runtime.PYTHON_3_6,
                                             environment= {'work_org_name':orgname_param.value_as_string,
@@ -89,13 +89,13 @@ class WorkMailOrgStack(core.Stack):
             )
         )
 
-        create_workmail_org = cr.Provider(self, "workmail-org",
+        create_workmail_org = cr.Provider(self, "id_workmail_org",
                                           on_event_handler=create_workmail_org_lambda,
                                           is_complete_handler=is_complete_org,  # optional async "waiter"
                                           log_retention=logs.RetentionDays.ONE_DAY#,  # default is INFINITE
                                           #role=my_role
                                           )
 
-        CustomResource(self, id="WorkMailOrgResource",
+        CustomResource(self, id="id_Work_Mail_Org_Resource",
                        service_token=create_workmail_org.service_token)
         
