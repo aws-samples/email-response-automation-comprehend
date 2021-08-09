@@ -70,6 +70,8 @@ After the stacks are succefully deployed (You can see if there is an error as th
 1. Go to AWS console and select the service 'Amazon Sagemaker'. Maker sure you are in us-east-1 region
 2. Select the Notebook menu and choose Notbook Instances
 ![Notebook-Instance](/uploads/f37db490bc2dfef14cdf3b24ae23558c/Notebook-Instance.jpg)
+3. Click 'Open Jupyter' from the Action menu
+
 
 
 The last script in the notebook will deploy the model and gives you the ARN of the deployed resource. Please use this ARN as the parameter for the next stack deployment.
