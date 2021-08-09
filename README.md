@@ -50,9 +50,9 @@ cdk deploy comprehend-custom-classifier-dev-notebook-stack  --parameters Noteboo
 ```
 
 Arguments to the stack creation :
-* 'NotbookName':(optional) Name of the notbook instance. If not entered, default name 'notebook-instance-comprehend-training' will be used.
-* 'NotebookConfigName':(optional) Name of the  Notebook config. If not entered, default config name 'notbook-lifecycle-load-notebook' will be used.
-* 'RoleName': (Optional) Name of the Amazon Sagmaker Execution role name. If not entered, default role name 'sagemaker-notebook-execution-role' will be used.
+* NotbookName :(optional) Name of the notbook instance. If not entered, default name 'notebook-instance-comprehend-training' will be used.
+* NotebookConfigName :(optional) Name of the  Notebook config. If not entered, default config name 'notbook-lifecycle-load-notebook' will be used.
+* RoleName : (Optional) Name of the Amazon Sagmaker Execution role name. If not entered, default role name 'sagemaker-notebook-execution-role' will be used.
 
 Deploying new Workmail domain, user, user registration and inbox: Execute following command by passing optional paramaters
 ```
