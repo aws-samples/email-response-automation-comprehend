@@ -71,10 +71,9 @@ After the stacks are succefully deployed (You can see if there is an error as th
 2. Select the Notebook menu and choose Notbook Instances
 ![Notebook-Instance](/uploads/f37db490bc2dfef14cdf3b24ae23558c/Notebook-Instance.jpg)
 3. Click 'Open Jupyter' from the Action menu
-
-
-
-The last script in the notebook will deploy the model and gives you the ARN of the deployed resource. Please use this ARN as the parameter for the next stack deployment.
+![ipython_notebook_screen](/uploads/0f87e935a948ce54d3832994c7ef8d9b/ipython_notebook_screen.jpg)
+4. You can see the notebook 'notebook-instance-comprehend-training' and click to open the notbook
+5. The last script in the notebook will deploy the model and gives you the ARN of the deployed resource. Please use this ARN as the parameter for the next stack deployment.
 
 Deploying AWS Lammbda fucntions, Amazon dynamoDB and SNS notifications: Execute the following command 
 ```
