@@ -12,12 +12,14 @@ from aws_cdk import core
 
 from stacks.notebook_comprehend_train_deploy_project_stack import NotebookComprehendTrainDeployProjectStack
 from stacks.workmailorg_project_stack import WorkMailOrgStack
+from stacks.email_classification_workflow_stack import EmailClassificationWorkflowStack
 #from EmailbotProjectStack.EmailbotProjectStack import EmailbotProjectStack
 
 app = core.App()
 
 NotebookComprehendTrainDeployProjectStack(app, "comprehend-custom-classifier-dev-notebook-stack")
 WorkMailOrgStack(app, "workmail-organization-domain-user-dev-stack")
+EmailClassificationWorkflowStack(app, "email-class-workflow-stack")
 
 
 app.synth()
