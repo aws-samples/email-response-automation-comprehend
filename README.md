@@ -8,7 +8,7 @@ Many of a times, customer asks the basic questions and it is unnecessary that cu
 
 ## Process Flow / Architecture Diagram
 
-![Automated_Email_Response_using_Amazon_Comprehend](/uploads/e7cdbe48f2e56b46086d962d04887d62/Automated_Email_Response_using_Amazon_Comprehend.jpg)
+![Automated_Email_Response_using_Amazon_Comprehend](/uploads/360725545cf3f7e04929e749ff653e7a/Automated_Email_Response_using_Amazon_Comprehend.jpg)
 
 ## CDK project structure :
 The soultion comprised of two cdk stacks.
@@ -49,13 +49,31 @@ Deploying new Sagemaker Notebook Instance with IAM Roles and pre-loaded .ipynb n
 cdk deploy comprehend-custom-classifier-dev-notebook-stack  --parameters NotebookName=<Notebook Name> --parameters NotebookConfigName=<Notebook Config Name> --parameters RoleName=<SageMaker execution role name>
 ```
 
+Arguments to the stack creation :
+* NotbookName :(optional) Name of the notbook instance. If not entered, default name 'notebook-instance-comprehend-training' will be used.
+* NotebookConfigName :(optional) Name of the  Notebook config. If not entered, default config name 'notbook-lifecycle-load-notebook' will be used.
+* RoleName : (Optional) Name of the Amazon Sagmaker Execution role name. If not entered, default role name 'sagemaker-notebook-execution-role' will be used.
+
 Deploying new Workmail domain, user, user registration and inbox: Execute following command by passing optional paramaters
 ```
 cdk deploy workmail-organization-domain-user-dev-stack --parameters OrganizationName=<Organization Name> --parameters UserName=<Support Username> --parameters PassWord=<Password>
 ```
+Arguments to the stack creation :
+* OrganizationName :(optional) Name of the workmail organization. If not entered, default name 'my-sample-workmail-org' will be used.
+* UserName :(optional) Name of the your organization support user alias. If not entered, default user name 'support' will be used.
+* PassWord : (Optional) Password for the UserName. If not entered, default password 'Welcome@123' will be used.
+
 Note : Please note that these both deployments approximately 20 to 25 minutes
 
-After the stacks are succefully deployed (You can see if there is an error as the cdk output otherwise it says stacks creation succeful.), please open the .ipynb notebook and execute all the scripts in the notebook in sequence. The last script in the notebook will deploy the model and gives you the ARN of the deployed resource. Please use this ARN as the parameter for the next stack deployment.
+After the stacks are succefully deployed (You can see if there is an error as the cdk output otherwise it says stacks creation succeful.), please open the .ipynb notebook from Sagemaker notebook instance and execute all the scripts in the notebook in sequence. 
+### Steps to open the .ipynb file from the notbook instance
+1. Go to AWS console and select the service 'Amazon Sagemaker'. Maker sure you are in us-east-1 region
+2. Select the Notebook menu and choose Notbook Instances
+![Notebook-Instance](/uploads/f37db490bc2dfef14cdf3b24ae23558c/Notebook-Instance.jpg)
+3. Click 'Open Jupyter' from the Action menu
+![ipython_notebook_screen](/uploads/0f87e935a948ce54d3832994c7ef8d9b/ipython_notebook_screen.jpg)
+4. You can see the notebook 'notebook-instance-comprehend-training' and click to open the notbook
+5. The last script in the notebook will deploy the model and gives you the ARN of the deployed resource. Please use this ARN as the parameter for the next stack deployment.
 
 Deploying AWS Lammbda fucntions, Amazon dynamoDB and SNS notifications: Execute the following command 
 ```
