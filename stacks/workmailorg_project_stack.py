@@ -74,7 +74,7 @@ class WorkMailOrgStack(core.Stack):
 
         is_complete_org.role.attach_inline_policy(
             iam.Policy(
-                self, "is_complete_custom_resource_lambda_policy",
+                self, "id_is_complete_custom_resource_lambda_policy",
                 policy_name = "is_complete_custom_resource_lambda_policy",
                 statements = [
                     iam.PolicyStatement(

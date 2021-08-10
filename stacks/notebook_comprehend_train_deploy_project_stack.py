@@ -30,7 +30,7 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
                 )
 
         #Role required for SageMaker to create the training job in Comprehend
-        sm_exec_role = iam.Role(self, "sagemaker-notebook-execution-role",
+        sm_exec_role = iam.Role(self, "id_sagemaker_notebook_execution_role",
                     role_name=nb_config_role_name_param.value_as_string,
                     description='Sagemaker execution policy for comprehend classification',
                     assumed_by=iam.CompositePrincipal(
@@ -77,14 +77,14 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
             {"content": cdk.Fn.base64(LifecycleScriptStr)}
                     ]
 
-        sagemaker_lifecycle= sm.CfnNotebookInstanceLifecycleConfig(self,'notebook life cycle config',
+        sagemaker_lifecycle= sm.CfnNotebookInstanceLifecycleConfig(self,'id_notebook_life_cycle_config',
                                                 notebook_instance_lifecycle_config_name=nb_config_name_param.value_as_string,
                                                 on_create=content,
                                                 on_start=content)
         
         
         #Notebook Creation
-        sm.CfnNotebookInstance(self, 'notebook instance for comprehend training',
+        sm.CfnNotebookInstance(self, 'id_notebook_instance_comprehend_training',
                                 instance_type='ml.t2.xlarge', 
                                 role_arn=sm_exec_role.role_arn,
                                 notebook_instance_name=nb_name_param.value_as_string,
