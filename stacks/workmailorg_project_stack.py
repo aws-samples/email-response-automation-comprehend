@@ -8,7 +8,6 @@ import aws_cdk.custom_resources as cr
 import aws_cdk.aws_lambda as lambda_
 #import path as path
 
-client = boto3.client('workmail', region_name='us-east-1')
 
 class WorkMailOrgStack(core.Stack):
 

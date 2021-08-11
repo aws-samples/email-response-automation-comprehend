@@ -45,7 +45,7 @@ class EmailClassificationWorkflowStack(core.Stack):
             }
         )
         
-        principal = iam.ServicePrincipal("workmail.us-west-2.amazonaws.com")
+        principal = iam.ServicePrincipal("workmail.us-east-1.amazonaws.com")
         workmail_lambda.grant_invoke(principal)
         
         workmail_lambda.add_to_role_policy(
