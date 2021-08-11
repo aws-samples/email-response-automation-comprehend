@@ -1,5 +1,4 @@
 from os import environ
-import boto3
 from aws_cdk.core import CustomResource
 import aws_cdk.core as core
 import aws_cdk.aws_logs as logs

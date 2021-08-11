@@ -17,12 +17,12 @@ comprehend-custom-classifier-dev-notebook-stack : Creates the Amazon sagemaker j
 workmail-organization-domain-user-dev-stack : Creates the Amazon workmail with domain, user, inbox access.
 
 ## Pre-requisites
-- An AWS Account with region us-east-1
+-
 - Make sure servics mentioned in the architecturea and its service limits in region us-east-1 and your account
 - AWS CLI and AWS CDK installed installed and configured with Access Key ID and Secret Access Key with access to AWS CloudFormation to create resources in your AWS account
 - Python3-pip installed in you terminal or any IDK 
 
-### Note: Amazon Comprehend is not available in us-west-1. So please choose other regions to deploy your stacks.
+### Note: You can deploy these stacks in us-east-1(N.Virginia) or us-west-2(Oregon) or eu-west-1(Ireland) (Amazon workmail available only in these 3 regions)
 
 ## Steps to deploy the project
 1. Clone the repository.
