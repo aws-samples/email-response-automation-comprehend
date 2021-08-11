@@ -61,7 +61,7 @@ Deploying new Workmail domain, user, user registration and inbox: Execute follow
 cdk deploy workmail-organization-domain-user-dev-stack --parameters OrganizationName=<Organization Name> --parameters UserName=<Support Username> --parameters PassWord=<Password>
 ```
 Arguments to the stack creation :
-* OrganizationName :(optional) Name of the workmail organization. If not entered, default name 'my-sample-workmail-org' will be used.
+* OrganizationName :(Required) Name of the workmail organization. If not entered, default name 'my-sample-workmail-org' will be used. Domain also will be created using this organization alias name. So make sure to use unique alias to avoid errors due to duplicate domain names.
 * UserName :(optional) Name of the your organization support user alias. If not entered, default user name 'support' will be used.
 * PassWord : (Optional) Password for the UserName. If not entered, default password 'Welcome@123' will be used.
 
