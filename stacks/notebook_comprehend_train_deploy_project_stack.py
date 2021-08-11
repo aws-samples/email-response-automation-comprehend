@@ -20,11 +20,12 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
         s3_bucket = s3.Bucket(self, "id_s3_bucket",
                          bucket_name=core.PhysicalName.GENERATE_IF_NEEDED,
                          #block_public_access=s3.BlockPublicAccess(block_public_policy=False),
-                         removal_policy=cdk.RemovalPolicy.DESTROY,
-                         auto_delete_objects=True)
+                         #removal_policy=cdk.RemovalPolicy.DESTROY,
+                         #auto_delete_objects=True
+                         )
 
         #s3_bucket_pol_state= iam.PolicyStatement(
-        result= s3_bucket.add_to_resource_policy(iam.PolicyStatement(
+        '''result= s3_bucket.add_to_resource_policy(iam.PolicyStatement(
                 actions=["s3:*"],
                 principals=[iam.AnyPrincipal()],
                 resources=[
@@ -37,7 +38,7 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
                         "s3:ResourceAccount": f"{cdk.Aws.ACCOUNT_ID}"
                     }
                 }
-            ))
+            ))'''
         
         
         #s3_bucket.add_to_resource_policy(s3_bucket_pol_state)
