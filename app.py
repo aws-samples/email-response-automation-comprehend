@@ -17,9 +17,13 @@ from stacks.email_classification_workflow_stack import EmailClassificationWorkfl
 
 app = core.App()
 
-NotebookComprehendTrainDeployProjectStack(app, "comprehend-custom-classifier-dev-notebook-stack")
-WorkMailOrgStack(app, "workmail-organization-domain-user-dev-stack")
-EmailClassificationWorkflowStack(app, "email-class-workflow-stack")
+NotebookComprehendTrainDeployProjectStack(app, "comprehend-custom-classifier-dev-notebook-stack",env=core.Environment(
+    account=os.environ["CDK_DEFAULT_ACCOUNT"],
+    region=os.environ["CDK_DEFAULT_REGION"]))
+WorkMailOrgStack(app, "workmail-organization-domain-user-dev-stack",env=core.Environment(
+    account=os.environ["CDK_DEFAULT_ACCOUNT"],
+    region=os.environ["CDK_DEFAULT_REGION"]))
+#EmailClassificationWorkflowStack(app, "email-class-workflow-stack")
 
 
 app.synth()
