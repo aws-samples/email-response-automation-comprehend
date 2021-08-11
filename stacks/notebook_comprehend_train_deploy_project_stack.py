@@ -23,6 +23,12 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
                          #removal_policy=cdk.RemovalPolicy.DESTROY,
                          #auto_delete_objects=True
                          )
+        
+        core.CfnOutput(
+            self, "ResponseMessage",
+            description="Bucket Name",
+            value='Bukcet name is  : '+s3_bucket.bucket_name,
+        )
 
         #s3_bucket_pol_state= iam.PolicyStatement(
         '''result= s3_bucket.add_to_resource_policy(iam.PolicyStatement(

@@ -22,6 +22,8 @@ workmail-organization-domain-user-dev-stack : Creates the Amazon workmail with d
 - AWS CLI and AWS CDK installed installed and configured with Access Key ID and Secret Access Key with access to AWS CloudFormation to create resources in your AWS account
 - Python3-pip installed in you terminal or any IDK 
 
+### Note: Amazon Comprehend is not available in us-west-1. So please choose other regions to deploy your stacks.
+
 ## Steps to deploy the project
 1. Clone the repository.
 
