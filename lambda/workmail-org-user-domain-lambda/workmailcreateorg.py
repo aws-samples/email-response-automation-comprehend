@@ -3,7 +3,7 @@ import os
 from botocore.exceptions import ClientError
 
 
-client = boto3.client('workmail',region_name='us-east-1')
+client = boto3.client('workmail')
 
 def handler(event, context):
   print(event)
@@ -17,7 +17,6 @@ def handler(event, context):
   raise Exception("Invalid request type: %s" % request_type)
 
 def on_create(event,orgName):
-    
     props = event["ResourceProperties"]
     print("create new resource with props %s" % props)
     # call workmail organization api
@@ -26,11 +25,13 @@ def on_create(event,orgName):
         Alias = orgName
         )
         print (workmail_response)
+        response = {'PhysicalResourceId' : workmail_response['OrganizationId']}
+        return response
     except ClientError as q:
         print("Error while creating the organization: %s" % q)
 
-    response = {'PhysicalResourceId' : workmail_response['OrganizationId']}
-    return response
+    
+    
 
 
 def on_update(event):
