@@ -4,11 +4,12 @@ from aws_cdk import (
     aws_sns as sns,
     aws_sns_subscriptions as subs,
     aws_dynamodb as dynamodb,
+    aws_ses as ses,
     core
 )
 
 import os.path as path
-
+import json
 
 class EmailClassificationWorkflowStack(core.Stack):
 
@@ -20,6 +21,8 @@ class EmailClassificationWorkflowStack(core.Stack):
         classification_lambda = self.classify_email_lambda(human_topic)
         
         workmail_lambda = self.workmail_integration_lambda(classification_lambda)
+        
+        self.register_email_temapltes()
         
         #email_templates_dynamodb = self.email_templates_dynamodb() 
         
@@ -118,3 +121,14 @@ class EmailClassificationWorkflowStack(core.Stack):
             partition_key=dynamodb.Attribute(name="id", type=dynamodb.AttributeType.STRING)
         )
         
+        
+    def register_email_temapltes(self):
+        
+        f = open('./stacks/email_templates.json',)
+        data = json.load(f)
+        for template in data['templates']:
+            ses.CfnTemplate(
+                self, "id_ses_template_{}".format(template['template_name']),
+                template= ses.CfnTemplate.TemplateProperty(**template)
+            )
+        f.close()

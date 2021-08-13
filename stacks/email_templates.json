@@ -1,0 +1,14 @@
+{
+    "templates": [
+      {
+        "template_name": "PASSWORD_CHANGE",
+        "text_part": "This is text...........",
+        "subject_part": "Greetings, {{name}}!"
+      },
+      {
+        "template_name": "TRANSACTION_STATUS",
+        "text_part": "This is text...........",
+        "subject_part": "Greetings, {{name}}!"
+      }
+    ]
+}
