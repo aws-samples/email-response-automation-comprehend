@@ -19,9 +19,8 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
         # Create s3 bucket
         s3_bucket = s3.Bucket(self, "id_s3_bucket",
                          bucket_name=core.PhysicalName.GENERATE_IF_NEEDED,
-                         #block_public_access=s3.BlockPublicAccess(block_public_policy=False),
-                         #removal_policy=cdk.RemovalPolicy.DESTROY,
-                         #auto_delete_objects=True
+                         removal_policy=cdk.RemovalPolicy.DESTROY,
+                         auto_delete_objects=True
                          )
         
         core.CfnOutput(
@@ -29,25 +28,6 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
             description="Bucket Name",
             value='Bukcet name is  : '+s3_bucket.bucket_name,
         )
-
-        #s3_bucket_pol_state= iam.PolicyStatement(
-        '''result= s3_bucket.add_to_resource_policy(iam.PolicyStatement(
-                actions=["s3:*"],
-                principals=[iam.AnyPrincipal()],
-                resources=[
-                    f"{s3_bucket.bucket_arn}",
-                    f"{s3_bucket.arn_for_objects('*')}"
-                ],
-                conditions={
-                    "StringEquals":
-                    {
-                        "s3:ResourceAccount": f"{cdk.Aws.ACCOUNT_ID}"
-                    }
-                }
-            ))'''
-        
-        
-        #s3_bucket.add_to_resource_policy(s3_bucket_pol_state)
 
         # upload file to S3
         deployment_nb = s3_deploy.BucketDeployment(self, 'id_Deploy_notebook_sample_data', 
