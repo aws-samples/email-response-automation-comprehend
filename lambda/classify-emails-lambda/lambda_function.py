@@ -117,7 +117,7 @@ def lambda_handler(event, context):
    best_intent = best_class(results)
    
    if(is_good_enough(best_intent)):
-      logger.info("Classification passed the threashold. Best matched intent is [{}]".format(best_intent['name']))
+      logger.info("Classification passed the threashold. Best matched intent is [{}]".format(best_intent['Name']))
       send_user_email(event, best_intent['Name'])
    else:
       send_to_human_workflow_topic(event)
