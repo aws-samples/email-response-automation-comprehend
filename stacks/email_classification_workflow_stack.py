@@ -71,6 +71,10 @@ class EmailClassificationWorkflowStack(core.Stack):
         email_classification_endpoint_arn = self.node.try_get_context("email_classification_endpoint_arn")
         if not email_classification_endpoint_arn:
              raise ValueError("Please provide email classification endpoint. You can provide that by specifying email_classification_endpoint_arn context variable")
+
+        support_email = self.node.try_get_context("support_email")
+        if not support_email:
+             raise ValueError("Please provide email of the support team. You can provide that by specifying support_email context variable")
         
         email_classify_lambda = lambda_.Function(
             self, "id_classify_emails_lambda_fn", 
@@ -82,7 +86,7 @@ class EmailClassificationWorkflowStack(core.Stack):
             environment={
                 "EMAIL_CLASSIFICATION_ENDPOINT_ARN" : email_classification_endpoint_arn,
                 "HUMAN_WORKFLOW_SNS_TOPIC_ARN" : human_workflow_topic.topic_arn,
-                "SOURCE_EMAIL" : "sariyawa@amazon.com"
+                "SOURCE_EMAIL" : support_email
             }
         )
         
