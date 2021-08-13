@@ -13,7 +13,6 @@ from aws_cdk import core
 from stacks.notebook_comprehend_train_deploy_project_stack import NotebookComprehendTrainDeployProjectStack
 from stacks.workmailorg_project_stack import WorkMailOrgStack
 from stacks.email_classification_workflow_stack import EmailClassificationWorkflowStack
-#from EmailbotProjectStack.EmailbotProjectStack import EmailbotProjectStack
 
 app = core.App()
 
@@ -23,7 +22,9 @@ NotebookComprehendTrainDeployProjectStack(app, "comprehend-custom-classifier-dev
 WorkMailOrgStack(app, "workmail-organization-domain-user-dev-stack",env=core.Environment(
     account=os.environ["CDK_DEFAULT_ACCOUNT"],
     region=os.environ["CDK_DEFAULT_REGION"]))
-#EmailClassificationWorkflowStack(app, "email-class-workflow-stack")
+EmailClassificationWorkflowStack(app, "email-class-workflow-stack",env=core.Environment(
+    account=os.environ["CDK_DEFAULT_ACCOUNT"],
+    region=os.environ["CDK_DEFAULT_REGION"]))
 
 
 app.synth()
