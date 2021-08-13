@@ -61,8 +61,10 @@ def send_user_email(email, template_name):
        ]
      },
      Template=template_name,
-     TemplateData='{ }'
+     TemplateData='{ \"Sub\":\"{}\" }'.format(email['subject'])
    )
+   
+   logger.info("Sent the email. Response is [{}]".format(response))
    
 
 def send_to_human_workflow_topic(email):
