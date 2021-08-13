@@ -45,9 +45,9 @@ class EmailClassificationWorkflowStack(core.Stack):
             }
         )
         
-        current_region = self.env.region
-
-        principal = iam.ServicePrincipal("workmail.{}.amazonaws.com".format(current_region))
+        current_region = self.region
+        
+        principal = iam.ServicePrincipal("workmail.us-west-2.amazonaws.com")
         
         workmail_lambda.grant_invoke(principal)
         
