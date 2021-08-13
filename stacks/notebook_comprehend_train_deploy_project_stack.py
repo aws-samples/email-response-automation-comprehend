@@ -1,5 +1,7 @@
 from aws_cdk import core as cdk
 import aws_cdk.aws_iam as iam
+import aws_cdk.aws_s3 as s3
+import aws_cdk.aws_s3_deployment as s3_deploy
 import aws_cdk.aws_sagemaker as sm
 from aws_cdk import core
 import base64
@@ -13,6 +15,52 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
 
     def __init__(self, scope: cdk.Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
+
+        # Create s3 bucket
+        s3_bucket = s3.Bucket(self, "id_s3_bucket",
+                         bucket_name=core.PhysicalName.GENERATE_IF_NEEDED,
+                         #block_public_access=s3.BlockPublicAccess(block_public_policy=False),
+                         #removal_policy=cdk.RemovalPolicy.DESTROY,
+                         #auto_delete_objects=True
+                         )
+        
+        core.CfnOutput(
+            self, "ResponseMessage",
+            description="Bucket Name",
+            value='Bukcet name is  : '+s3_bucket.bucket_name,
+        )
+
+        #s3_bucket_pol_state= iam.PolicyStatement(
+        '''result= s3_bucket.add_to_resource_policy(iam.PolicyStatement(
+                actions=["s3:*"],
+                principals=[iam.AnyPrincipal()],
+                resources=[
+                    f"{s3_bucket.bucket_arn}",
+                    f"{s3_bucket.arn_for_objects('*')}"
+                ],
+                conditions={
+                    "StringEquals":
+                    {
+                        "s3:ResourceAccount": f"{cdk.Aws.ACCOUNT_ID}"
+                    }
+                }
+            ))'''
+        
+        
+        #s3_bucket.add_to_resource_policy(s3_bucket_pol_state)
+
+        # upload file to S3
+        deployment_nb = s3_deploy.BucketDeployment(self, 'id_Deploy_notebook_sample_data', 
+                sources=[s3_deploy.Source.asset('./notebook'),
+                s3_deploy.Source.asset('./sample_data')
+                ], # 'folder' contains your empty files at the right locations
+                destination_bucket= s3_bucket
+                )
+
+        '''deployment_sam_data = s3_deploy.BucketDeployment(self, 'id_Deploy_sample_data', 
+                sources=[s3_deploy.Source.asset('./sample_data')], # 'folder' contains your empty files at the right locations
+                destination_bucket= s3_bucket
+                )'''
 
         nb_name_param = core.CfnParameter(self, "NotebookName",
                 #type="String",
@@ -30,7 +78,7 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
                 )
 
         #Role required for SageMaker to create the training job in Comprehend
-        sm_exec_role = iam.Role(self, "sagemaker-notebook-execution-role",
+        sm_exec_role = iam.Role(self, "id_sagemaker_notebook_execution_role",
                     role_name=nb_config_role_name_param.value_as_string,
                     description='Sagemaker execution policy for comprehend classification',
                     assumed_by=iam.CompositePrincipal(
@@ -71,20 +119,25 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
 
         #nb_lifecycle_config_name='notbook-lifecycle-load-notebook'
 
-        LifecycleScriptStr = open("./comprehend_custom_classification/nb_lifecycle/lifecycle.sh", "r").read()
+        LifecycleScriptStr = open("./nb_lifecycle/lifecycle.sh", "r").read()
+
+        new_LifecycleScriptStr = LifecycleScriptStr.replace("S3URL",s3_bucket.bucket_name)
+
+        # Copy to S3 bucket
+
 
         content = [
-            {"content": cdk.Fn.base64(LifecycleScriptStr)}
+            {"content": cdk.Fn.base64(new_LifecycleScriptStr)}
                     ]
 
-        sagemaker_lifecycle= sm.CfnNotebookInstanceLifecycleConfig(self,'notebook life cycle config',
+        sagemaker_lifecycle= sm.CfnNotebookInstanceLifecycleConfig(self,'id_notebook_life_cycle_config',
                                                 notebook_instance_lifecycle_config_name=nb_config_name_param.value_as_string,
                                                 on_create=content,
                                                 on_start=content)
         
         
         #Notebook Creation
-        sm.CfnNotebookInstance(self, 'notebook instance for comprehend training',
+        sm.CfnNotebookInstance(self, 'id_notebook_instance_comprehend_training',
                                 instance_type='ml.t2.xlarge', 
                                 role_arn=sm_exec_role.role_arn,
                                 notebook_instance_name=nb_name_param.value_as_string,
