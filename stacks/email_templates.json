@@ -1,13 +1,13 @@
 {
     "templates": [
       {
-        "template_name": "PASSWORD_CHANGE",
-        "text_part": "This is text...........",
+        "template_name": "MONEYTRANSFER",
+        "text_part": "This is MONEY TRANSFER",
         "subject_part": "Greetings, {{name}}!"
       },
       {
-        "template_name": "TRANSACTION_STATUS",
-        "text_part": "This is text...........",
+        "template_name": "PROMOCODE",
+        "text_part": "This is PROMOCODE",
         "subject_part": "Greetings, {{name}}!"
       }
     ]
