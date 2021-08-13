@@ -51,26 +51,24 @@ def best_class(results):
 def is_good_enough(best_result):
    return best_result['Score'] >= threashold
    
-def send_user_email(user_email, template_name):
-   
+def send_user_email(email, template_name):
+   logger.info("Sending email to the user : [{}]".format(email))
    response = ses_client.send_templated_email(
      Source=source_email,
      Destination={
        'ToAddresses': [
-         user_email,
+         email['to'],
        ]
      },
      Template=template_name,
-     TemplateData={
-        
-     }
+     TemplateData='{ }'
    )
    
 
-def send_to_human_workflow_topic(event):
+def send_to_human_workflow_topic(email):
    
    human_workflow_topic.publish(
-      Message = json.dumps(event, indent = 4)  ,
+      Message = json.dumps(email, indent = 4)  ,
       Subject = "Human workflow entry found"
    )
    
@@ -118,9 +116,9 @@ def lambda_handler(event, context):
    
    if(is_good_enough(best_intent)):
       logger.info("Classification passed the threashold. Best matched intent is [{}]".format(best_intent['Name']))
-      send_user_email(event, best_intent['Name'])
+      send_user_email(event['email'], best_intent['Name'])
    else:
-      send_to_human_workflow_topic(event)
+      send_to_human_workflow_topic(event['email'])
       
    return best_intent
   

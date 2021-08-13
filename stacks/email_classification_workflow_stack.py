@@ -95,6 +95,16 @@ class EmailClassificationWorkflowStack(core.Stack):
                     )
             
         )
+
+        email_classify_lambda.add_to_role_policy(
+            iam.PolicyStatement(
+                        actions = [
+                            "ses:SendTemplatedEmail",
+                        ],
+                        resources= [ '*' ]
+                    )
+            
+        )
         
         human_workflow_topic.grant_publish(email_classify_lambda)
         
