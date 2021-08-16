@@ -61,7 +61,7 @@ def send_user_email(email, template_name):
        ]
      },
      Template=template_name,
-     TemplateData='{ \"Sub\":\"{}\" }'.format(email['subject'])
+     TemplateData="{ \"Sub\":\"" + email['subject'] + "\" }"
    )
    
    logger.info("Sent the email. Response is [{}]".format(response))
