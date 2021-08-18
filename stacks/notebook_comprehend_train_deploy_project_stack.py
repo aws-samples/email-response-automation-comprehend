@@ -81,7 +81,10 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
                 "comprehend:CreateEndpoint",
                 "comprehend:TagResource",
                 "comprehend:ClassifyDocument",
-                "comprehend:DescribeEndpoint"]
+                "comprehend:CreateEntityRecognizer",
+                "comprehend:DescribeEndpoint",
+                "comprehend:DescribeEntityRecognizer",
+                "comprehend:DetectEntities"]
         ))
 
         print(sm_exec_role)
