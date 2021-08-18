@@ -3,12 +3,17 @@
       {
         "template_name": "MONEYTRANSFER",
         "text_part": "This is MONEY TRANSFER",
-        "subject_part": "Greetings, {{name}}!"
+        "subject_part": "{{Sub}}"
       },
       {
         "template_name": "PROMOCODE",
         "text_part": "This is PROMOCODE",
-        "subject_part": "Greetings, {{name}}!"
+        "subject_part": "{{Sub}}"
+      },
+      {
+        "template_name": "PASSRESET",
+        "text_part": "This is PASSRESET",
+        "subject_part": "{{Sub}}"
       }
     ]
 }
