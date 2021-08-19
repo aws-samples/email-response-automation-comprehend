@@ -64,9 +64,13 @@ def get_template_data(email, intent):
        EndpointArn=ner_endpoint_name
       )
       
-      transaction_id = next((entity for for entity in response['Entities']  if entity == 'TRANSATIONID'), None)
+      logger.info("Reponse received from NER endpoint is : [{}]".format(response))
       
-      if transaction_id not None:
+      transaction_id = next((entity for entity in response['Entities']  if entity == 'MTNID'), None)
+      
+      logger.info("Transaction id identitied is : [{}]".format(transaction_id))
+      
+      if transaction_id is not None:
          status = mock.get(transaction_id)
          return "{ \"Sub\":\"" + email['subject'] + "\", \"TRANSATIONSTATUS\":\"" + status + "\" }"
       else:
@@ -80,7 +84,7 @@ def send_user_email(email, intent):
    
    temaplte_data = get_template_data(email, intent)
    
-   if(email, intent not None) :
+   if temaplte_data is not None:
    
       response = ses_client.send_templated_email(
         Source=source_email,
