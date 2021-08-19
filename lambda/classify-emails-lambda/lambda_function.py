@@ -74,8 +74,11 @@ def get_template_data(email, intent):
          best_transation_id = best_transactions[0]['Text']
          logger.info("Transaction id identitied is : [{}] with score : [{}]".format(best_transation_id, best_transactions[0]['Score']))
          status = mock.get_trasfer_status(best_transation_id)
-         return "{ \"Sub\":\"" + email['subject'] + "\", \"{{MTNID}}\":\"" + best_transation_id + "\" , \"{{STATUS}}\":\"" + status + "\" }"
+         temaplte_data = "{ \"Sub\":\"" + email['subject'] + "\", \"MTNID\":\"" + best_transation_id + "\" , \"STATUS\":\"" + status + "\" }"
+         logger.info("Temaplte data are : [{}]".format(temaplte_data))
+         return temaplte_data
       else:
+         logger.info("No valid mtn id found in the request.")
          return None
    else :
       return "{ \"Sub\":\"" + email['subject'] + "\" }"
@@ -84,7 +87,7 @@ def get_template_data(email, intent):
 def send_user_email(email, intent):
    logger.info("Sending email to the user : [{}]".format(email))
    
-   temaplte_data = get_template_data(email, intent)
+   template_data = get_template_data(email, intent)
    
    if temaplte_data is not None:
    
@@ -96,7 +99,7 @@ def send_user_email(email, intent):
           ]
         },
         Template=intent,
-        TemplateData="{ \"Sub\":\"" + email['subject'] + "\" }"
+        TemplateData=template_data
       )
       
       logger.info("Sent the email. Response is [{}]".format(response))
