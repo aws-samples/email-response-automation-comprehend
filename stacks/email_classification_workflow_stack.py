@@ -72,6 +72,10 @@ class EmailClassificationWorkflowStack(core.Stack):
         if not email_classification_endpoint_arn:
              raise ValueError("Please provide email classification endpoint. You can provide that by specifying email_classification_endpoint_arn context variable")
 
+        email_entity_recognition_endpoint_arn = self.node.try_get_context("email_entity_recognition_endpoint_arn")
+        if not email_entity_recognition_endpoint_arn:
+             raise ValueError("Please provide email entity recognition endpoint. You can provide that by specifying email_entity_recognition_endpoint_arn context variable")
+
         support_email = self.node.try_get_context("support_email")
         if not support_email:
              raise ValueError("Please provide email of the support team. You can provide that by specifying support_email context variable")
@@ -85,6 +89,7 @@ class EmailClassificationWorkflowStack(core.Stack):
             timeout = core.Duration.minutes(1),
             environment={
                 "EMAIL_CLASSIFICATION_ENDPOINT_ARN" : email_classification_endpoint_arn,
+                "EMAIL_ENTITY_RECOGNITION_ENDPOINT_ARN" : email_entity_recognition_endpoint_arn,
                 "HUMAN_WORKFLOW_SNS_TOPIC_ARN" : human_workflow_topic.topic_arn,
                 "SOURCE_EMAIL" : support_email
             }
