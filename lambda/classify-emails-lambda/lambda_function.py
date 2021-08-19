@@ -66,13 +66,15 @@ def get_template_data(email, intent):
       
       logger.info("Reponse received from NER endpoint is : [{}]".format(response))
       
-      transaction_id = next((entity for entity in response['Entities']  if entity == 'MTNID'), None)
+      transactions = filter(lambda entity: entity['Type'] == 'MTNID', response['Entities'])
       
-      logger.info("Transaction id identitied is : [{}]".format(transaction_id))
+      best_transactions = sorted(transactions, key=lambda entity: entity['Score'], reverse=True)
       
-      if transaction_id is not None:
-         status = mock.get(transaction_id)
-         return "{ \"Sub\":\"" + email['subject'] + "\", \"{{MTNID}}\":\"" + transaction_id + "\" , \"{{STATUS}}\":\"" + status + "\" }"
+      if(len(best_transactions) > 0):
+         best_transation_id = best_transactions[0]['Text']
+         logger.info("Transaction id identitied is : [{}] with score : [{}]".format(best_transation_id, best_transactions[0]['Score']))
+         status = mock.get_trasfer_status(best_transation_id)
+         return "{ \"Sub\":\"" + email['subject'] + "\", \"{{MTNID}}\":\"" + best_transation_id + "\" , \"{{STATUS}}\":\"" + status + "\" }"
       else:
          return None
    else :
