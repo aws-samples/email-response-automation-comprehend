@@ -59,8 +59,8 @@ def get_template_data(email, intent):
 
    if(intent == 'MONEYTRANSFER'):
       
-      response = client.detect_entities(
-       Text=email_text['body'],
+      response = comprehend_client.detect_entities(
+       Text=email['body'],
        EndpointArn=ner_endpoint_name
       )
       
@@ -72,7 +72,7 @@ def get_template_data(email, intent):
       
       if transaction_id is not None:
          status = mock.get(transaction_id)
-         return "{ \"Sub\":\"" + email['subject'] + "\", \"TRANSATIONSTATUS\":\"" + status + "\" }"
+         return "{ \"Sub\":\"" + email['subject'] + "\", \"{{MTNID}}\":\"" + transaction_id + "\" , \"{{STATUS}}\":\"" + status + "\" }"
       else:
          return None
    else :
