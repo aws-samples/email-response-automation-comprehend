@@ -69,6 +69,12 @@ class WorkMailOrgStack(core.Stack):
                                                                 'password': pass_param.value_as_string}
                                                                     )
                                             
+        '''core.CfnOutput(
+            self, "id_support_email_address",
+            description="Support Email Address",
+            value='Support Email Address  : '+,
+        )'''
+
 
         is_complete_org.role.attach_inline_policy(
             iam.Policy(
