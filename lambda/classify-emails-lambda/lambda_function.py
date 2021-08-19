@@ -5,6 +5,7 @@ import boto3
 import logging
 import os
 import json 
+import mock_apis as mock
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -14,14 +15,17 @@ sns_client = boto3.resource('sns')
 ses_client = boto3.client('ses')
 
 
-endpoint_name = os.getenv("EMAIL_CLASSIFICATION_ENDPOINT_ARN")
+classification_endpoint_name = os.getenv("EMAIL_CLASSIFICATION_ENDPOINT_ARN")
+ner_endpoint_name = os.getenv("EMAIL_ENTITY_RECOGNITION_ENDPOINT_ARN")
 threashold = os.getenv("EMAIL_CLASSIFICATION_THREASHOLD")
 human_workflow_topic_arn = os.getenv("HUMAN_WORKFLOW_SNS_TOPIC_ARN")
 source_email = os.getenv("SOURCE_EMAIL")
 
-
-if not endpoint_name:
+if not classification_endpoint_name:
    raise ValueError("env variable EMAIL_CLASSIFICATION_ENDPOINT_ARN is required.")
+   
+if not ner_endpoint_name:
+   raise ValueError("env variable EMAIL_ENTITY_RECOGNITION_ENDPOINT_ARN is required.")
    
 if not human_workflow_topic_arn:
    raise ValueError("env variable HUMAN_WORKFLOW_SNS_TOPIC is required.")  
@@ -38,7 +42,7 @@ def call_endpoint(email_body):
    
    response = comprehend_client.classify_document(
     Text=email_body,
-    EndpointArn=endpoint_name
+    EndpointArn=classification_endpoint_name
    )
    
    return response
@@ -51,20 +55,47 @@ def best_class(results):
 def is_good_enough(best_result):
    return best_result['Score'] >= threashold
    
-def send_user_email(email, template_name):
-   logger.info("Sending email to the user : [{}]".format(email))
-   response = ses_client.send_templated_email(
-     Source=source_email,
-     Destination={
-       'ToAddresses': [
-         email['to'],
-       ]
-     },
-     Template=template_name,
-     TemplateData="{ \"Sub\":\"" + email['subject'] + "\" }"
-   )
+def get_template_data(email, intent):
+
+   if(intent == 'MONEYTRANSFER'):
+      
+      response = client.detect_entities(
+       Text=email_text['body'],
+       EndpointArn=ner_endpoint_name
+      )
+      
+      transaction_id = next((entity for for entity in response['Entities']  if entity == 'TRANSATIONID'), None)
+      
+      if transaction_id not None:
+         status = mock.get(transaction_id)
+         return "{ \"Sub\":\"" + email['subject'] + "\", \"TRANSATIONSTATUS\":\"" + status + "\" }"
+      else:
+         return None
+   else :
+      return "{ \"Sub\":\"" + email['subject'] + "\" }"
+ 
    
-   logger.info("Sent the email. Response is [{}]".format(response))
+def send_user_email(email, intent):
+   logger.info("Sending email to the user : [{}]".format(email))
+   
+   temaplte_data = get_template_data(email, intent)
+   
+   if(email, intent not None) :
+   
+      response = ses_client.send_templated_email(
+        Source=source_email,
+        Destination={
+          'ToAddresses': [
+            email['to'],
+          ]
+        },
+        Template=intent,
+        TemplateData="{ \"Sub\":\"" + email['subject'] + "\" }"
+      )
+      
+      logger.info("Sent the email. Response is [{}]".format(response))
+   else:
+      send_to_human_workflow_topic(email)
    
 
 def send_to_human_workflow_topic(email):
@@ -116,10 +147,13 @@ def lambda_handler(event, context):
    
    best_intent = best_class(results)
    
+   logger.info("Best matched intent is [{}]".format(best_intent['Name']))
+   
    if(is_good_enough(best_intent)):
-      logger.info("Classification passed the threashold. Best matched intent is [{}]".format(best_intent['Name']))
+      logger.info("Classification passed the threashold. Hence sending responding back to the customer.")
       send_user_email(event['email'], best_intent['Name'])
    else:
+      logger.info("Classification failed the threashold. Hence sending to support.")
       send_to_human_workflow_topic(event['email'])
       
    return best_intent
