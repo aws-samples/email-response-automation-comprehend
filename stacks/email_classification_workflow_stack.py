@@ -100,7 +100,7 @@ class EmailClassificationWorkflowStack(core.Stack):
                         actions = [
                             "comprehend:*",
                         ],
-                        resources= [ email_classification_endpoint_arn ]
+                        resources= [ email_classification_endpoint_arn, email_entity_recognition_endpoint_arn ]
                     )
             
         )
