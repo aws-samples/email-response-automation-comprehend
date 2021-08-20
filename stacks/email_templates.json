@@ -2,17 +2,17 @@
     "templates": [
       {
         "template_name": "MONEYTRANSFER",
-        "text_part": "This is MONEY TRANSFER",
+        "text_part": "Dear Customer, Hope you are looking for the status of your money transfer. Status of your {{MTNID}} is {{STATUS}}. If this is not right information you are looking for, please reply back to this email with little more information",
         "subject_part": "{{Sub}}"
       },
       {
         "template_name": "PROMOCODE",
-        "text_part": "This is PROMOCODE",
+        "text_part": "Dear Customer, Hope you are looking for the promocode your transactions. We verified your loyelty with us and please use this promo code 'LOYAL5' to avial 5% discount on your tranfer fee",
         "subject_part": "{{Sub}}"
       },
       {
         "template_name": "PASSRESET",
-        "text_part": "This is PASSRESET",
+        "text_part": "Dear Customer, Sorry for the inconvenience caused whil login to your account. Please click on the user profile on the top right corner and intiate the unlock account process which will reset your account and password. Hope this helps, If not, please reply back to this email with more information",
         "subject_part": "{{Sub}}"
       }
     ]
