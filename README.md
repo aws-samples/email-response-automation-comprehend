@@ -75,19 +75,25 @@ After the stacks are succefully deployed (You can see if there is an error as th
 3. Click 'Open Jupyter' from the Action menu
 ![ipython_notebook_screen](/uploads/0f87e935a948ce54d3832994c7ef8d9b/ipython_notebook_screen.jpg)
 4. You can see the notebook 'notebook-instance-comprehend-training' and click to open the notbook
-5. The last script in the notebook will deploy the model and gives you the ARN of the deployed resource. Please use this ARN as the parameter for the next stack deployment.
+5. Run the script as per the instruction given in the notebook. Classification endpoint and Entity Detection endpoint will be created.  Please use these ARNs as the context variables for the next stack deployment.
 
-Deploying AWS Lammbda fucntions, Amazon dynamoDB and SNS notifications: Execute the following command 
+Below CDK Deployment will create AWS Lammbda fucntions, Amazon SES and SNS notifications: Execute the following command by passing the context variables
 ```
-cdk deploy -c email_classification_endpoint_arn=<comprehend_classification_endpoint_arn> -c human_workflow_email=<human_workflow_email>
+cdk deploy email-class-workflow-stack -c email_classification_endpoint_arn= <email classification endpoint ARN from sagemaker notebook>  -c human_workflow_email=<Workflow Email> -c support_email=<support email id created part of the workmail-organization-domain-user-dev-stack> -c email_entity_recognition_endpoint_arn=<Enitity Detection endpoint ARN from sagemaker notbook>
 ```
-
 Arguments to the stack creation :
 
-* `comprehend_classification_endpoint_arn` : TBD
-* `human_workflow_email` : TBD
+* email_classification_endpoint_arn (required) : email classification endpoint ARN from sagemaker notebook
+* human_workflow_email (required) : email id to receive the SNS notification if customer email content does not match with any classifcation. The email id will subscribe from SNS topic and SNS will publish unclassified email to the topic. 
+* Support Email (required) : Email id created part of the workmail org and user creation. This email id will receive email from the customer and invoke the lambda function
+* email_entity_recognition_endpoint_arn (required) : email entity recognition endpoint ARN from sagemaker notebook
 
 Setting up the Inbound rules in Amazon Workmail using the lambda function generated in previous stack. Please use the  'Amazon Workmail Inbound Rule Setup with Lambda.docx' file to complete this setup
 
 
-## Testing the solution
+## Testing the solution by sending an email to support email. You will either get automatic reply with predefined reply content depends on the classification from the comprehend custom classifcation model.
+Currently 3 type email classification will be used for automatic response back to customer.
+1. MONEYTRANSFER  - Customer email contains query about the money transfer 
+2. PASSRESET - Customer email contains query related to login, account locked or password request
+3. PROMOCODE - Customer email contains query related to discount or promo available for the money transfer
+If the customer email does not belong to any of the above classifcation, customer email will be moved to SNS topic and whoever subscribe the topic will receive the message. In our testing we subscribe with human workflow email (ex: your presonal email) to verify the mail has been moved to SNS topic.
