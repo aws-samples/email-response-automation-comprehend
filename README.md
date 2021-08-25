@@ -17,7 +17,7 @@ comprehend-custom-classifier-dev-notebook-stack : Creates the Amazon sagemaker j
 workmail-organization-domain-user-dev-stack : Creates the Amazon workmail with domain, user, inbox access.
 
 ## Pre-requisites
--
+
 - Make sure servics mentioned in the architecturea and its service limits in region us-east-1 and your account
 - AWS CLI and AWS CDK installed installed and configured with Access Key ID and Secret Access Key with access to AWS CloudFormation to create resources in your AWS account
 - Python3-pip installed in you terminal or any IDK 
