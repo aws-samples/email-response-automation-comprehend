@@ -8,7 +8,7 @@ Many of a times, customer asks the basic questions and it is unnecessary that cu
 
 ## Process Flow / Architecture Diagram
 
-![Automated_Email_Response_using_Amazon_Comprehend](/uploads/360725545cf3f7e04929e749ff653e7a/Automated_Email_Response_using_Amazon_Comprehend.jpg)
+[Automated_Email_Response_using_Amazon_Comprehend](/uploads/a4c5dbcd3169757c58d64b8d8b14548e/Automated_Email_Response_using_Amazon_Comprehend.jpg)
 
 ## CDK project structure :
 The soultion comprised of two cdk stacks.
