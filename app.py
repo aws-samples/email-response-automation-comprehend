@@ -12,7 +12,7 @@ from aws_cdk import core
 
 from stacks.notebook_comprehend_train_deploy_project_stack import NotebookComprehendTrainDeployProjectStack
 from stacks.workmailorg_project_stack import WorkMailOrgStack
-from stacks.email_classification_workflow_stack import EmailClassificationWorkflowStack
+from stacks.email_automation_workflow_stack import EmailAutomationWorkflowStack
 
 app = core.App()
 
@@ -23,6 +23,6 @@ env = core.Environment(
 
 NotebookComprehendTrainDeployProjectStack(app, "comprehend-custom-classifier-dev-notebook-stack", env=env)
 WorkMailOrgStack(app, "workmail-organization-domain-user-dev-stack", env=env)
-EmailClassificationWorkflowStack(app, "email-class-workflow-stack", env=env)
+EmailAutomationWorkflowStack(app, "email-reponse-automation-workflow-stack", env=env)
 
 app.synth()

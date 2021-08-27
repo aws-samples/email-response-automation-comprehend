@@ -3,7 +3,6 @@ from aws_cdk import (
     aws_iam as iam,
     aws_sns as sns,
     aws_sns_subscriptions as subs,
-    aws_dynamodb as dynamodb,
     aws_ses as ses,
     core
 )
@@ -11,7 +10,7 @@ from aws_cdk import (
 import os.path as path
 import json
 
-class EmailClassificationWorkflowStack(core.Stack):
+class EmailAutomationWorkflowStack(core.Stack):
 
     def __init__(self, scope: core.Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -26,10 +25,6 @@ class EmailClassificationWorkflowStack(core.Stack):
         
     
     def workmail_integration_lambda(self, classification_lambda):
-        
-        # workmail_arn = self.node.try_get_context("workmail_arn")
-        # if not workmail_arn:
-        #      raise ValueError("Please provide arn of the workmail domain. You can provide that by specifying workmail_arn context variable")
         
         workmail_lambda = lambda_.Function(
             self, "id_workmail_integration_lambda_lambda_fn", 
@@ -66,17 +61,17 @@ class EmailClassificationWorkflowStack(core.Stack):
         
     def classify_email_lambda(self, human_workflow_topic):
         
-        email_classification_endpoint_arn = self.node.try_get_context("email_classification_endpoint_arn")
-        if not email_classification_endpoint_arn:
-             raise ValueError("Please provide email classification endpoint. You can provide that by specifying email_classification_endpoint_arn context variable")
-
-        email_entity_recognition_endpoint_arn = self.node.try_get_context("email_entity_recognition_endpoint_arn")
-        if not email_entity_recognition_endpoint_arn:
-             raise ValueError("Please provide email entity recognition endpoint. You can provide that by specifying email_entity_recognition_endpoint_arn context variable")
-
-        support_email = self.node.try_get_context("support_email")
-        if not support_email:
-             raise ValueError("Please provide email of the support team. You can provide that by specifying support_email context variable")
+        email_classification_endpoint_arn = core.CfnParameter(self, "emailClassificationEndpointArn",
+                #type="String"
+                ).value_as_string
+                
+        email_entity_recognition_endpoint_arn = core.CfnParameter(self, "emailEntityRecognitionEndpointArn",
+                #type="String"
+                ).value_as_string
+                
+        support_email = core.CfnParameter(self, "supportEmail",
+                #type="String"
+                ).value_as_string
         
         email_classify_lambda = lambda_.Function(
             self, "id_classify_emails_lambda_fn", 
@@ -120,10 +115,9 @@ class EmailClassificationWorkflowStack(core.Stack):
             
     def human_workflow_topic(self):
         
-        human_workflow_email = self.node.try_get_context("human_workflow_email")
-       
-        if not human_workflow_email:
-             raise ValueError("Please provide email to forward the human workflow events. You can provide that by specifying human_workflow_email context variable")
+        human_workflow_email = core.CfnParameter(self, "humanWorkflowEmail",
+                #type="String"
+                ).value_as_string
              
         topic =  sns.Topic(
             self, "id_human_workflow_topic",

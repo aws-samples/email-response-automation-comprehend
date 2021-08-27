@@ -80,9 +80,9 @@ After the stacks are succefully deployed (You can see if there is an error as th
 4. You can see the notebook 'notebook-instance-comprehend-training' and click to open the notbook
 5. Run the script as per the instruction given in the notebook. Classification endpoint and Entity Detection endpoint will be created.  Please use these ARNs as the context variables for the next stack deployment.
 
-Below CDK Deployment will create AWS Lammbda fucntions, Amazon SES and SNS notifications: Execute the following command by passing the context variables
+Below CDK Deployment will create AWS Lambda fucntions, Amazon SES and SNS notifications: Execute the following command by passing the context variables
 ```
-cdk deploy email-class-workflow-stack -c email_classification_endpoint_arn= <email classification endpoint ARN from sagemaker notebook>  -c human_workflow_email=<Workflow Email> -c support_email=<support email id created part of the workmail-organization-domain-user-dev-stack> -c email_entity_recognition_endpoint_arn=<Enitity Detection endpoint ARN from sagemaker notbook>
+cdk deploy email-reponse-automation-workflow-stack -c email_classification_endpoint_arn= <email classification endpoint ARN from sagemaker notebook>  -c human_workflow_email=<Workflow Email> -c support_email=<support email id created part of the workmail-organization-domain-user-dev-stack> -c email_entity_recognition_endpoint_arn=<Enitity Detection endpoint ARN from sagemaker notbook>
 ```
 Arguments to the stack creation :
 
