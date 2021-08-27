@@ -74,9 +74,9 @@ After the stacks are succefully deployed (You can see if there is an error as th
 ### Steps to open the .ipynb file from the notbook instance
 1. Go to AWS console and select the service 'Amazon Sagemaker'. Maker sure you are in us-east-1 region
 2. Select the Notebook menu and choose Notbook Instances
-![Notebook-Instance](/uploads/f37db490bc2dfef14cdf3b24ae23558c/Notebook-Instance.jpg)
+![Notebook-Instance](./images/Notebook_Instance_image.jpeg)
 3. Click 'Open Jupyter' from the Action menu
-![ipython_notebook_screen](/uploads/0f87e935a948ce54d3832994c7ef8d9b/ipython_notebook_screen.jpg)
+![ipython_notebook_screen](./images/jupyter_ipython_notebook_image.jpeg)
 4. You can see the notebook 'notebook-instance-comprehend-training' and click to open the notbook
 5. Run the script as per the instruction given in the notebook. Classification endpoint and Entity Detection endpoint will be created.  Please use these ARNs as the context variables for the next stack deployment.
 
