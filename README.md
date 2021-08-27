@@ -74,9 +74,9 @@ After the stacks are succefully deployed (You can see if there is an error as th
 ### Steps to open the .ipynb file from the notbook instance
 1. Go to AWS console and select the service 'Amazon Sagemaker'. Maker sure you are in us-east-1 region
 2. Select the Notebook menu and choose Notbook Instances
-![Notebook-Instance](/uploads/f37db490bc2dfef14cdf3b24ae23558c/Notebook-Instance.jpg)
+![Notebook-Instance](./images/Notebook_Instance_image.jpeg)
 3. Click 'Open Jupyter' from the Action menu
-![ipython_notebook_screen](/uploads/0f87e935a948ce54d3832994c7ef8d9b/ipython_notebook_screen.jpg)
+![ipython_notebook_screen](./images/jupyter_ipython_notebook_image.jpeg)
 4. You can see the notebook 'notebook-instance-comprehend-training' and click to open the notbook
 5. Run the script as per the instruction given in the notebook. Classification endpoint and Entity Detection endpoint will be created.  Please use these ARNs as the context variables for the next stack deployment.
 
@@ -96,15 +96,15 @@ Arguments to the stack creation :
 
 1.	Click on ‘Organization Settings’ from the menu and in General section you will see the web-application link for your email.
 
-![Workmail Org Settings](./images/Workmail_org_settings.png)
+![Workmail Org Settings](./images/Workmail_org_settings.jpg)
 
 2.	Click on that web-application URL to login and enter the username and password and Sign In.
 
-![Workmail Login](./images/Workmail_login.png)
+![Workmail Login](./images/Workmail_login.jpg)
 
 3.	You will see your Email inbox web page.
 
-![Workmail UI](./images/Workmail_ui.png)
+![Workmail UI](./images/Workmail_ui.jpg)
 
 4.	Test this new email box by sending email from your personal email id.
 
@@ -116,11 +116,19 @@ Arguments to the stack creation :
 * This Lambda function will be invoked upon receiving the email on this domain	
 * Enter * in both Sender domain and destination domain
 
-![Workmail Login](./images/Workmail_rule_lambda.png)
+![Workmail Login](./images/Workmail_rule_lambda.jpg)
 
-## Testing the solution by sending an email to support email. You will either get automatic reply with predefined reply content depends on the classification from the comprehend custom classifcation model.
-Currently 3 type email classification will be used for automatic response back to customer.
-1. MONEYTRANSFER  - Customer email contains query about the money transfer 
+
+Currently 3 type of custom email classifications will be used for automated response to customer email.
+1. MONEYTRANSFER  - Customer email contains query about the money transfer
 2. PASSRESET - Customer email contains query related to login, account locked or password request
 3. PROMOCODE - Customer email contains query related to discount or promo available for the money transfer
-If the customer email does not belong to any of the above classifcation, customer email will be moved to SNS topic and whoever subscribe the topic will receive the message. In our testing we subscribe with human workflow email (ex: your presonal email) to verify the mail has been moved to SNS topic.
+If the customer email does not belong to any of the above classifcation, customer email will be sent to SNS topic and whoever subscribe the topic will receive the message.  In our testing we subscribe with email we passed with human_workflow_email parameter(ex: your presonal email) to verify the mail has been moved to SNS topic.
+
+## Testing the solution 
+* Step1: send the email to the customer support email box (ex: support@my-sample-workmail-org.awsapps.com) from your personal email to query about the money transfer status. Example email content: Subject: 'Money Transfer Status'  Body: 'Hi Team , Can you please check the status of money tranfer I sent to India? This is my trx id : MTN0000123 Regards CustomerX'
+* Step2: Check your workmail inbox and you can see the email sent from your personal email.
+* Step3: You can see the automatic email response back to you personal email with your money transfer status with same subject. "Dear Customer, Hope you are looking for the status of your money transfer. Status of your MTN0000123 is INPROGRESS. If this is not right information you are looking for, please reply back to this email with little more information"
+* Step4: Try sending email with your own subject and body related to above three classications. You will see the different email response based classification results.
+* Step5: Try sending email with your own subject and busy not related to above classifications. Ex: Hello, can you help me to solve my problem?. You will see your email has been moved to SNS topic and you can confirm that by see the email content in your human workflow email you given during the stack creation.
+
