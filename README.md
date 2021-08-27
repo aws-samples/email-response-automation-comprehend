@@ -119,7 +119,7 @@ Arguments to the stack creation :
 ![Workmail Login](./images/Workmail_rule_lambda.jpg)
 
 
-Currently 3 type of custom email classification will be used for automatic response back to customer.
+Currently 3 type of custom email classifications will be used for automated response to customer email.
 1. MONEYTRANSFER  - Customer email contains query about the money transfer
 2. PASSRESET - Customer email contains query related to login, account locked or password request
 3. PROMOCODE - Customer email contains query related to discount or promo available for the money transfer
