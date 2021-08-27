@@ -118,9 +118,17 @@ Arguments to the stack creation :
 
 ![Workmail Login](./images/Workmail_rule_lambda.jpg)
 
-## Testing the solution by sending an email to support email. You will either get automatic reply with predefined reply content depends on the classification from the comprehend custom classifcation model.
-Currently 3 type email classification will be used for automatic response back to customer.
-1. MONEYTRANSFER  - Customer email contains query about the money transfer 
+
+Currently 3 type of custom email classification will be used for automatic response back to customer.
+1. MONEYTRANSFER  - Customer email contains query about the money transfer
 2. PASSRESET - Customer email contains query related to login, account locked or password request
 3. PROMOCODE - Customer email contains query related to discount or promo available for the money transfer
-If the customer email does not belong to any of the above classifcation, customer email will be moved to SNS topic and whoever subscribe the topic will receive the message. In our testing we subscribe with human workflow email (ex: your presonal email) to verify the mail has been moved to SNS topic.
+If the customer email does not belong to any of the above classifcation, customer email will be sent to SNS topic and whoever subscribe the topic will receive the message.  In our testing we subscribe with email we passed with human_workflow_email parameter(ex: your presonal email) to verify the mail has been moved to SNS topic.
+
+## Testing the solution 
+Step1: send the email to the customer support email box (ex: support@my-sample-workmail-org.awsapps.com) from your personal email to query about the money transfer status. Example email content: Subject: 'Money Transfer Status'  Body: 'Hi Team , Can you please check the status of money tranfer I sent to India? This is my trx id : MTN0000123 Regards CustomerX'
+Step2: Check your workmail inbox and you can see the email sent from your personal email.
+Step3: You can see the automatic email response back to you personal email with your money transfer status with same subject. "Dear Customer, Hope you are looking for the status of your money transfer. Status of your MTN0000123 is INPROGRESS. If this is not right information you are looking for, please reply back to this email with little more information"
+Step4: Try sending email with your own subject and body related to above three classications. You will see the different email response based classification results.
+Step5: Try sending email with your own subject and busy not related to above classifications. Ex: Hello, can you help me to solve my problem?. You will see your email has been moved to SNS topic and you can confirm that by see the email content in your human workflow email you given during the stack creation.
+
