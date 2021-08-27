@@ -91,8 +91,32 @@ Arguments to the stack creation :
 * `support_email` (required) : Email id created part of the workmail org and user creation. This email id will receive email from the customer and invoke the lambda function
 * `email_entity_recognition_endpoint_arn` (required) : email entity recognition endpoint ARN from sagemaker notebook
 
-Setting up the Inbound rules in Amazon Workmail using the lambda function generated in previous stack. Please use the  'Amazon Workmail Inbound Rule Setup with Lambda.docx' file to complete this setup
+#### Setting up the Inbound rules in Amazon Workmail using the lambda function generated in previous stack :
 
+
+1.	Click on ‘Organization Settings’ from the menu and in General section you will see the web-application link for your email.
+
+![Workmail Org Settings](./images/Workmail_org_settings.png)
+
+2.	Click on that web-application URL to login and enter the username and password and Sign In.
+
+![Workmail Login](./images/Workmail_login.png)
+
+3.	You will see your Email inbox web page.
+
+![Workmail UI](./images/Workmail_ui.png)
+
+4.	Test this new email box by sending email from your personal email id.
+
+5.	Setting up Inbound Rules:
+
+•	Click on ‘Organization Settings’ and choose the ‘Inbound Rules’ menu
+•	Click the button ‘Create rule’
+•	Enter the Rule Name and Select the action ‘Run Lambda’ and choose ‘Custom Lambda function’ and select the lambda function generated in the previous stack deployment.
+•	This Lambda function will be invoked upon receiving the email on this domain	
+•	Enter * in both Sender domain and destination domain
+
+![Workmail Login](./images/Workmail_rule_lambda.png)
 
 ## Testing the solution by sending an email to support email. You will either get automatic reply with predefined reply content depends on the classification from the comprehend custom classifcation model.
 Currently 3 type email classification will be used for automatic response back to customer.
