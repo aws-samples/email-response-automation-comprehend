@@ -110,11 +110,11 @@ Arguments to the stack creation :
 
 5.	Setting up Inbound Rules:
 
-•	Click on ‘Organization Settings’ and choose the ‘Inbound Rules’ menu
-•	Click the button ‘Create rule’
-•	Enter the Rule Name and Select the action ‘Run Lambda’ and choose ‘Custom Lambda function’ and select the lambda function generated in the previous stack deployment.
-•	This Lambda function will be invoked upon receiving the email on this domain	
-•	Enter * in both Sender domain and destination domain
+* Click on ‘Organization Settings’ and choose the ‘Inbound Rules’ menu
+* Click the button ‘Create rule’
+* Enter the Rule Name and Select the action ‘Run Lambda’ and choose ‘Custom Lambda function’ and select the lambda function generated in the previous stack deployment.
+* This Lambda function will be invoked upon receiving the email on this domain	
+* Enter * in both Sender domain and destination domain
 
 ![Workmail Login](./images/Workmail_rule_lambda.png)
 
