@@ -8,7 +8,7 @@ Many of a times, customer asks the basic questions and it is unnecessary that cu
 
 ## Process Flow / Architecture Diagram
 
-![alt text](https://github.com/aws-samples/email-response-automation-comprehend/blob/master/images/Automated%20Email%20Response%20using%20Amazon%20Comprehend.jpg)
+![alt text](./images/Automated Email Response using Amazon Comprehend.jpg)
 
 ## CDK project structure :
 The soultion comprised of two cdk stacks.
