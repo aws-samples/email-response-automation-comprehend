@@ -30,7 +30,6 @@ aws-cdk.region-info==1.115.0
 boto3==1.18.6
 botocore==1.21.6
 cattrs==1.6.0
--e git+git@ssh.gitlab.aws.dev:vgodwin/comprend_email_custom_classification_project.git@825468908a033dd5de56d2128ba3a5b692794e4f#egg=comprehend_custom_classification
 constructs==3.3.101
 jmespath==0.10.0
 jsii==1.32.0
