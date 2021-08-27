@@ -1,4 +1,4 @@
-# Email Classification Using Amazon Comprehend project!
+# Email Response Automation with Amazon Compreheng
 
 This project is developed to showcase how Amazon comprehend can be used to classify the incoming email and respond back to the customer automatically. 
 
@@ -13,14 +13,13 @@ Many of a times, customer asks the basic questions and it is unnecessary that cu
 ## CDK project structure :
 The soultion comprised of two cdk stacks.
 
-comprehend-custom-classifier-dev-notebook-stack : Creates the Amazon sagemaker jupyter notbook instance pre-loaded with .ipynb notbook and creates IAM role required for executing comprehend custom classification training, deployment, and S3 data access.
-workmail-organization-domain-user-dev-stack : Creates the Amazon workmail with domain, user, inbox access.
+`comprehend-custom-classifier-dev-notebook-stack` : Creates the Amazon sagemaker jupyter notbook instance pre-loaded with .ipynb notbook and creates IAM role required for executing comprehend custom classification training, deployment, and S3 data access.
+`workmail-organization-domain-user-dev-stack` : Creates the Amazon workmail with domain, user, inbox access.
 
 ## Pre-requisites
-
-- Make sure servics mentioned in the architecturea and its service limits in region us-east-1 and your account
-- AWS CLI and AWS CDK installed installed and configured with Access Key ID and Secret Access Key with access to AWS CloudFormation to create resources in your AWS account
-- Python3-pip installed in you terminal or any IDK 
+* AWS CLI >= 2.2.25 (Please follow [this](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-upgrade) guide to install/upgrade AWS cli)
+* AWS CDK command line utility (1.120.0) (Please follow [this](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) guide to install/upgrade cdk.)
+* Python>=3.7
 
 ### Note: You can deploy these stacks in us-east-1(N.Virginia) or us-west-2(Oregon) or eu-west-1(Ireland) (Amazon workmail available only in these 3 regions)
 
