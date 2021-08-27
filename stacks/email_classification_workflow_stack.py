@@ -24,8 +24,6 @@ class EmailClassificationWorkflowStack(core.Stack):
         
         self.register_email_temapltes()
         
-        #email_templates_dynamodb = self.email_templates_dynamodb() 
-        
     
     def workmail_integration_lambda(self, classification_lambda):
         
@@ -137,16 +135,10 @@ class EmailClassificationWorkflowStack(core.Stack):
         
         return topic
         
-    def email_templates_dynamodb(self):
-        return dynamodb.Table(
-            self, "id_email_templates_db",
-            partition_key=dynamodb.Attribute(name="id", type=dynamodb.AttributeType.STRING)
-        )
-        
         
     def register_email_temapltes(self):
         
-        f = open('./stacks/email_templates.json',)
+        f = open('./sample_data/email_templates.json',)
         data = json.load(f)
         for template in data['templates']:
             ses.CfnTemplate(

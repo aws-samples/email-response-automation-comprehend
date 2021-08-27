@@ -37,11 +37,6 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
                 destination_bucket= s3_bucket
                 )
 
-        '''deployment_sam_data = s3_deploy.BucketDeployment(self, 'id_Deploy_sample_data', 
-                sources=[s3_deploy.Source.asset('./sample_data')], # 'folder' contains your empty files at the right locations
-                destination_bucket= s3_bucket
-                )'''
-
         nb_name_param = core.CfnParameter(self, "NotebookName",
                 #type="String",
                 default='notebook-instance-comprehend-training'
@@ -67,7 +62,6 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
                     ))
 
         #Policy for Sagemaker Full Access, fetching data from S3 bucket and run the classification training job
-
         sm_exec_role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSageMakerFullAccess"))
 
         sm_exec_role.add_to_policy(iam.PolicyStatement(
