@@ -13,15 +13,15 @@ Many of a times, customer asks the basic questions and it is unnecessary that cu
 ## CDK project structure :
 The soultion comprised of two cdk stacks.
 
-`comprehend-custom-classifier-dev-notebook-stack` : Creates the Amazon sagemaker jupyter notbook instance pre-loaded with .ipynb notbook and creates IAM role required for executing comprehend custom classification training, deployment, and S3 data access.
-`workmail-organization-domain-user-dev-stack` : Creates the Amazon workmail with domain, user, inbox access.
+* `comprehend-custom-classifier-dev-notebook-stack` : Creates the Amazon sagemaker jupyter notbook instance pre-loaded with .ipynb notbook and creates IAM role required for executing comprehend custom classification training, deployment, and S3 data access.
+* `workmail-organization-domain-user-dev-stack` : Creates the Amazon workmail with domain, user, inbox access.
 
 ## Pre-requisites
 * AWS CLI >= 2.2.25 (Please follow [this](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-upgrade) guide to install/upgrade AWS cli)
 * AWS CDK command line utility (1.120.0) (Please follow [this](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) guide to install/upgrade cdk.)
 * Python>=3.7
 
-### Note: You can deploy these stacks in us-east-1(N.Virginia) or us-west-2(Oregon) or eu-west-1(Ireland) (Amazon workmail available only in these 3 regions)
+**Note:** You can deploy these stacks in us-east-1(N.Virginia) or us-west-2(Oregon) or eu-west-1(Ireland) (Amazon workmail available only in these 3 regions)
 
 ## Steps to deploy the project
 1. Clone the repository.
@@ -55,18 +55,18 @@ cdk deploy comprehend-custom-classifier-dev-notebook-stack  --parameters Noteboo
 ```
 
 Arguments to the stack creation :
-* NotbookName :(optional) Name of the notbook instance. If not entered, default name 'notebook-instance-comprehend-training' will be used.
-* NotebookConfigName :(optional) Name of the  Notebook config. If not entered, default config name 'notbook-lifecycle-load-notebook' will be used.
-* RoleName : (Optional) Name of the Amazon Sagmaker Execution role name. If not entered, default role name 'sagemaker-notebook-execution-role' will be used.
+* `NotbookName` :(optional) Name of the notbook instance. If not entered, default name 'notebook-instance-comprehend-training' will be used.
+* `NotebookConfigName` :(optional) Name of the  Notebook config. If not entered, default config name 'notbook-lifecycle-load-notebook' will be used.
+* `RoleName` : (Optional) Name of the Amazon Sagmaker Execution role name. If not entered, default role name 'sagemaker-notebook-execution-role' will be used.
 
 Deploying new Workmail domain, user, user registration and inbox: Execute following command by passing optional paramaters
 ```
 cdk deploy workmail-organization-domain-user-dev-stack --parameters OrganizationName=<Organization Name> --parameters UserName=<Support Username> --parameters PassWord=<Password>
 ```
 Arguments to the stack creation :
-* OrganizationName :(Required) Name of the workmail organization. If not entered, default name 'my-sample-workmail-org' will be used. Domain also will be created using this organization alias name. So make sure to use unique alias to avoid errors due to duplicate domain names.
-* UserName :(optional) Name of the your organization support user alias. If not entered, default user name 'support' will be used.
-* PassWord : (Optional) Password for the UserName. If not entered, default password 'Welcome@123' will be used.
+* `OrganizationName` :(Required) Name of the workmail organization. If not entered, default name 'my-sample-workmail-org' will be used. Domain also will be created using this organization alias name. So make sure to use unique alias to avoid errors due to duplicate domain names.
+* `UserName` :(optional) Name of the your organization support user alias. If not entered, default user name 'support' will be used.
+* `PassWord` : (Optional) Password for the UserName. If not entered, default password 'Welcome@123' will be used.
 
 Note : Please note that these both deployments approximately 20 to 25 minutes
 
@@ -86,10 +86,10 @@ cdk deploy email-class-workflow-stack -c email_classification_endpoint_arn= <ema
 ```
 Arguments to the stack creation :
 
-* email_classification_endpoint_arn (required) : email classification endpoint ARN from sagemaker notebook
-* human_workflow_email (required) : email id to receive the SNS notification if customer email content does not match with any classifcation. The email id will subscribe from SNS topic and SNS will publish unclassified email to the topic. 
-* Support Email (required) : Email id created part of the workmail org and user creation. This email id will receive email from the customer and invoke the lambda function
-* email_entity_recognition_endpoint_arn (required) : email entity recognition endpoint ARN from sagemaker notebook
+* `email_classification_endpoint_arn` (required) : email classification endpoint ARN from sagemaker notebook
+* `human_workflow_email` (required) : email id to receive the SNS notification if customer email content does not match with any classifcation. The email id will subscribe from SNS topic and SNS will publish unclassified email to the topic. 
+* `support_email` (required) : Email id created part of the workmail org and user creation. This email id will receive email from the customer and invoke the lambda function
+* `email_entity_recognition_endpoint_arn` (required) : email entity recognition endpoint ARN from sagemaker notebook
 
 Setting up the Inbound rules in Amazon Workmail using the lambda function generated in previous stack. Please use the  'Amazon Workmail Inbound Rule Setup with Lambda.docx' file to complete this setup
 
