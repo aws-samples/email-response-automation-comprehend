@@ -1,4 +1,4 @@
-# Email Response Automation with Amazon Compreheng
+# Email Response Automation with Amazon Comprehend
 
 This project is developed to showcase how Amazon comprehend can be used to classify the incoming email and respond back to the customer automatically. 
 
@@ -25,6 +25,10 @@ The soultion comprised of two cdk stacks.
 
 ## Steps to deploy the project
 1. Clone the repository.
+
+```
+git clone git@github.com:aws-samples/email-response-automation-comprehend.git
+```
 
 2. This project is set up like a standard Python project. To create the virtualenv it assumes that there is a python3 (or python for Windows) executable in your path with access to the venv package. create the virtualenv using following command.
 ```
