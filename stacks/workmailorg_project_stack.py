@@ -98,7 +98,14 @@ class WorkMailOrgStack(core.Stack):
                                           log_retention=logs.RetentionDays.ONE_DAY#,  # default is INFINITE
                                           #role=my_role
                                           )
+        
 
         CustomResource(self, id="id_Work_Mail_Org_Resource",
                        service_token=create_workmail_org.service_token)
+        
+        core.CfnOutput(
+            self, "ResponseMessage",
+            description="Your support email address is",
+            value="Your support email address is:  "+ username_param.value_as_string+'@'+orgname_param.value_as_string+'.awsapps.com'                                                                                              
+        )
         
