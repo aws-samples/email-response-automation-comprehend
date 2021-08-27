@@ -40,7 +40,7 @@ class EmailAutomationWorkflowStack(core.Stack):
         
         current_region = self.region
         
-        principal = iam.ServicePrincipal("workmail.us-west-2.amazonaws.com")
+        principal = iam.ServicePrincipal("workmail.{}.amazonaws.com".format(current_region))
         
         workmail_lambda.grant_invoke(principal)
         
