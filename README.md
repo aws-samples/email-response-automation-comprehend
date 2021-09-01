@@ -82,14 +82,14 @@ After the stacks are succefully deployed (You can see if there is an error as th
 
 Below CDK Deployment will create AWS Lambda fucntions, Amazon SES and SNS notifications: Execute the following command by passing the context variables
 ```
-cdk deploy email-reponse-automation-workflow-stack -c email_classification_endpoint_arn= <email classification endpoint ARN from sagemaker notebook>  -c human_workflow_email=<Workflow Email> -c support_email=<support email id created part of the workmail-organization-domain-user-dev-stack> -c email_entity_recognition_endpoint_arn=<Enitity Detection endpoint ARN from sagemaker notbook>
+cdk deploy email-reponse-automation-workflow-stack --parameters emailClassificationEndpointArn=<email classification endpoint ARN from sagemaker notebook>  --parameters humanWorkflowEmail=<Workflow Email> --parameters supportEmail=<support email id created part of the workmail-organization-domain-user-dev-stack> --parameters emailEntityRecognitionEndpointArn=<Enitity Detection endpoint ARN from sagemaker notbook>
 ```
 Arguments to the stack creation :
 
-* `email_classification_endpoint_arn` (required) : email classification endpoint ARN from sagemaker notebook
-* `human_workflow_email` (required) : email id to receive the SNS notification if customer email content does not match with any classifcation. The email id will subscribe from SNS topic and SNS will publish unclassified email to the topic. 
-* `support_email` (required) : Email id created part of the workmail org and user creation. This email id will receive email from the customer and invoke the lambda function
-* `email_entity_recognition_endpoint_arn` (required) : email entity recognition endpoint ARN from sagemaker notebook
+* `emailClassificationEndpointArn` (required) : email classification endpoint ARN from sagemaker notebook
+* `humanWorkflowEmail` (required) : email id to receive the SNS notification if customer email content does not match with any classifcation. The email id will subscribe from SNS topic and SNS will publish unclassified email to the topic. 
+* `supportEmail` (required) : Email id created part of the workmail org and user creation. This email id will receive email from the customer and invoke the lambda function
+* `emailEntityRecognitionEndpointArn` (required) : email entity recognition endpoint ARN from sagemaker notebook
 
 #### Setting up the Inbound rules in Amazon Workmail using the lambda function generated in previous stack :
 
@@ -126,9 +126,22 @@ Currently 3 type of custom email classifications will be used for automated resp
 If the customer email does not belong to any of the above classifcation, customer email will be sent to SNS topic and whoever subscribe the topic will receive the message.  In our testing we subscribe with email we passed with human_workflow_email parameter(ex: your presonal email) to verify the mail has been moved to SNS topic.
 
 ## Testing the solution 
-* Step1: send the email to the customer support email box (ex: support@my-sample-workmail-org.awsapps.com) from your personal email to query about the money transfer status. Example email content: Subject: 'Money Transfer Status'  Body: 'Hi Team , Can you please check the status of money tranfer I sent to India? This is my trx id : MTN0000123 Regards CustomerX'
-* Step2: Check your workmail inbox and you can see the email sent from your personal email.
-* Step3: You can see the automatic email response back to you personal email with your money transfer status with same subject. "Dear Customer, Hope you are looking for the status of your money transfer. Status of your MTN0000123 is INPROGRESS. If this is not right information you are looking for, please reply back to this email with little more information"
-* Step4: Try sending email with your own subject and body related to above three classications. You will see the different email response based classification results.
-* Step5: Try sending email with your own subject and busy not related to above classifications. Ex: Hello, can you help me to solve my problem?. You will see your email has been moved to SNS topic and you can confirm that by see the email content in your human workflow email you given during the stack creation.
+* **Step1**: send the email to the customer support email box (ex: support@my-sample-workmail-org.awsapps.com) from your personal email to query about the money transfer status. 
+* Example email content: 
+```
+Subject: 'Money Transfer Status'  Body: 'Hi Team , Can you please check the status of money tranfer I sent to India? This is my trx id : MTN0000123 Regards CustomerX'
+```
 
+* **Step2**: Check your workmail inbox and you can see the email sent from your personal email.
+
+* **Step3**: You can see the automatic email response back to you personal email with your money transfer status with same subject. 
+```
+Dear Customer, Hope you are looking for the status of your money transfer. Status of your MTN0000123 is INPROGRESS. If this is not right information you are looking for, please reply back to this email with little more information
+```
+
+* **Step4**: Try sending email with your own subject and body related to above three classications. You will see the different email response based classification results.
+
+* **Step5**: Try sending email with your own subject and busy not related to above classifications. 
+```
+Ex: Hello, can you help me to solve my problem?. You will see your email has been moved to SNS topic and you can confirm that by see the email content in your human workflow email you given during the stack creation.
+```
