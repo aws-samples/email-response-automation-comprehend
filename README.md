@@ -11,9 +11,9 @@ Many of a times, customer asks the basic questions and it is unnecessary that cu
 ![Architecture](./images/Solution_Architecture.jpg)
 
 ## CDK project structure :
-The soultion comprised of two cdk stacks.
+The solution comprised of two cdk stacks.
 
-* `comprehend-custom-classifier-dev-notebook-stack` : Creates the Amazon sagemaker jupyter notbook instance pre-loaded with .ipynb notbook and creates IAM role required for executing comprehend custom classification training, deployment, and S3 data access.
+* `comprehend-custom-classifier-dev-notebook-stack` : Creates the Amazon sagemaker jupyter notebook instance pre-loaded with .ipynb notebook and creates IAM role required for executing comprehend custom classification training, deployment, and S3 data access.
 * `workmail-organization-domain-user-dev-stack` : Creates the Amazon workmail with domain, user, inbox access.
 
 ## Pre-requisites
