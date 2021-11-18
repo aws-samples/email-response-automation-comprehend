@@ -91,7 +91,7 @@ class EmailAutomationWorkflowStack(core.Stack):
         email_classify_lambda.add_to_role_policy(
             iam.PolicyStatement(
                         actions = [
-                            "comprehend:*",
+                            "comprehend:ClassifyDocument",
                         ],
                         resources= [ email_classification_endpoint_arn, email_entity_recognition_endpoint_arn ]
                     )
