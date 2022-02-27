@@ -17,7 +17,8 @@ The solution comprised of two cdk stacks.
 * `workmail-organization-domain-user-dev-stack` : Creates the Amazon workmail with domain, user, inbox access.
 
 ## Pre-requisites
-* AWS CLI >= 2.2.25 (Please follow [this](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-upgrade) guide to install/upgrade AWS cli)
+* AWS CLI >= 2.2.25 (Please follow [Installing or updating the latest version of the AWS CLI
+](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-upgrade) guide to install/upgrade AWS cli)
 * AWS CDK command line utility (1.120.0) (Please follow [this](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) guide to install/upgrade cdk.)
 * Python>=3.7
 
