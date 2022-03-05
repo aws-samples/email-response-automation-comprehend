@@ -146,3 +146,23 @@ Dear Customer, Hope you are looking for the status of your money transfer. Statu
 ```
 Ex: Hello, can you help me to solve my problem?. You will see your email has been moved to SNS topic and you can confirm that by see the email content in your human workflow email you given during the stack creation.
 ```
+
+## Clean up :
+
+To avoid incurring ongoing costs, delete the resources you created as part of this solution bye executing following commands in order. 
+
+1. `cdk destroy email-reponse-automation-workflow-stack`
+
+2. `cdk deploy comprehend-custom-classifier-dev-notebook-stack`
+
+3. `cdk deploy workmail-organization-domain-user-dev-stack`
+
+## Security
+
+See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+
+## License
+
+This library is licensed under the MIT-0 License. See the LICENSE file.
+
+Enjoy!
