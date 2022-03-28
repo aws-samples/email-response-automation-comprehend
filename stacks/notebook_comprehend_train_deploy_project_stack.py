@@ -86,8 +86,8 @@ class NotebookComprehendTrainDeployProjectStack(cdk.Stack):
 
         # required for comprehend to fetch the data from S3 bucket
         sm_exec_role.add_to_policy(iam.PolicyStatement(
-                #resources=comp_exec_role.role_arn,
-                resources=["*"],
+                resources=[sm_exec_role.role_arn],
+                #resources=["*"],
                 actions=["iam:GetRole",
                 "iam:PassRole"]
             ))
